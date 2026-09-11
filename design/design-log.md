@@ -92,6 +92,18 @@ Voice: *"From my experience…"*, *"I learned…"* — personal narrative carryi
 
 ## 2. What we built, and the verdicts
 
+### Episode 01 poster v1 · Netflix style, first content episode — ⏳ AWAITING VERDICT
+*2026-09-11. `episodes/01-nobody-agreed-what-churn-meant/poster.html` → `poster.png`.*
+
+The first content episode in the series style: an episode and season badge, the logo on the title line, the voluntary/involuntary split as two cards, the six-field contract as a numbered grid, "the trap" (averaging rates) next to "where it lives" (Unity Catalog), and the takeaway in white and red.
+
+**Lessons from building it:**
+- A 236px empty band above the footer made the poster look unfinished. **Fill the frame.** The export script checks overflow, but not empty space, so measure the gap too.
+- Enlarging the title from 76px to 84px pushed it onto **three lines**. Check the title's line count, not just the overflow.
+- Put the red half of the takeaway on **its own line** so it never splits mid-phrase.
+
+---
+
 ### Netflix-style poster v2 · dark navy, logo on the title line — ✅ POSTED 2026-09-11 (with Option B text)
 *2026-09-11. `episodes/00-trailer/poster.html` → `poster.png`.*
 
