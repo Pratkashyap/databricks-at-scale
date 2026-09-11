@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Databricks at Scale — Netflix-style poster v2</title>
+<style>
+  :root{
+    --bg1:#0c1820; --bg2:#13242e; --card:#182a35; --card2:#1d3340;
+    --ink:#ffffff; --ink2:#b9c6cc; --ink3:#7f9199;
+    --red:#ff3621; --line:#2a3f4b;
+    --s1:#4a9eff; --s2:#ffb020; --s3:#25c692;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg1)}
+  body{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;color:var(--ink);
+       -webkit-font-smoothing:antialiased}
+  .p{width:1080px;height:1350px;padding:50px 56px 40px;display:flex;flex-direction:column;
+     position:relative;overflow:hidden;
+     background:linear-gradient(165deg,var(--bg2) 0%,var(--bg1) 55%,#0a141b 100%)}
+  .p::before{content:"";position:absolute;right:-260px;top:-240px;width:820px;height:640px;
+     background:radial-gradient(closest-side,rgba(255,54,33,.26),transparent 72%);pointer-events:none}
+  .p::after{content:"";position:absolute;left:-300px;top:260px;width:700px;height:520px;
+     background:radial-gradient(closest-side,rgba(74,158,255,.13),transparent 72%);pointer-events:none}
+  .p > *{position:relative;z-index:1}
+
+  /* hero */
+  .badge{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:800;letter-spacing:.24em;
+         text-transform:uppercase;color:var(--ink2)}
+  .badge i{width:4px;height:17px;background:var(--red);border-radius:2px;display:block}
+  .title{display:grid;grid-template-columns:auto 1fr;column-gap:22px;margin-top:18px;align-items:start}
+  .logo{width:92px;height:92px;margin-top:6px}
+  h1{font-size:112px;line-height:.9;letter-spacing:-.045em;font-weight:900;text-transform:uppercase}
+  h1 .l2{display:block;color:var(--red)}
+
+  .meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px;
+        font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+  .meta .dot{width:4px;height:4px;border-radius:50%;background:var(--ink3)}
+  .meta .pill{border:1.5px solid var(--line);border-radius:6px;padding:5px 11px}
+  .tagline{font-size:31px;line-height:1.3;font-weight:700;margin-top:22px;letter-spacing:-.01em;color:var(--ink2)}
+  .tagline b{color:var(--ink);font-weight:800}
+
+  /* seasons */
+  .seasons{margin-top:28px;display:flex;flex-direction:column;gap:16px}
+  .sh{display:flex;align-items:baseline;gap:14px;margin-bottom:12px}
+  .sn{font-size:14px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+  .s1 .sn{color:var(--s1)} .s2 .sn{color:var(--s2)} .s3 .sn{color:var(--s3)}
+  .st{font-size:30px;font-weight:900;letter-spacing:-.025em;text-transform:uppercase}
+  .sq{margin-left:auto;font-size:17px;color:var(--ink3);font-style:italic}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .c{background:var(--card);border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+  .th{height:62px;display:flex;align-items:center;padding:0 18px;position:relative}
+  .s1 .th{background:linear-gradient(120deg,#163459,#10233b)}
+  .s2 .th{background:linear-gradient(120deg,#4a3510,#2c210c)}
+  .s3 .th{background:linear-gradient(120deg,#0f3d31,#0b2721)}
+  .ep{font-size:38px;font-weight:900;letter-spacing:-.04em;opacity:.85}
+  .s1 .ep{color:var(--s1)} .s2 .ep{color:var(--s2)} .s3 .ep{color:var(--s3)}
+  .star{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:800;
+        letter-spacing:.14em;text-transform:uppercase;background:var(--red);color:#fff;padding:5px 9px;border-radius:5px}
+  .ct{padding:13px 18px 15px;font-size:19.5px;font-weight:800;line-height:1.25;letter-spacing:-.01em;min-height:78px;
+      display:flex;align-items:center}
+
+  /* keywords */
+  .kw{margin-top:24px}
+  .kh{font-size:13.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3);margin-bottom:13px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:14.5px;font-weight:600;color:var(--ink2);background:var(--card);border:1.5px solid var(--line);
+        border-radius:20px;padding:6px 14px}
+  .chip.hot{color:#fff;border-color:#6a2a22;background:#2a1714}
+
+  /* footer */
+  .foot{margin-top:auto;padding-top:20px;border-top:1.5px solid var(--line);display:flex;
+        align-items:center;justify-content:space-between}
+  .fl{font-size:19px;font-weight:700;color:var(--ink2)} .fl b{color:#fff}
+  .fr{display:flex;align-items:center;gap:14px;text-align:right}
+  .fr .n{font-size:23px;font-weight:900;letter-spacing:-.01em}
+  .fr .u{font-size:16px;font-weight:700;color:var(--red);margin-top:2px}
+  .fr svg{width:44px;height:44px}
+</style>
+</head>
+<body>
+<div class="p">
+
+  <div class="badge"><i></i> An original build series</div>
+
+  <div class="title">
+    <svg class="logo" viewBox="0 0 24 24" fill="#FF3621"><path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/></svg>
+    <h1>Databricks<span class="l2">at Scale</span></h1>
+  </div>
+
+  <div class="meta">
+    <span class="pill">2026</span><span class="dot"></span>
+    <span>3 Seasons</span><span class="dot"></span>
+    <span>9 Episodes</span><span class="dot"></span>
+    <span>Data &amp; AI</span><span class="dot"></span>
+    <span class="pill">Beginner friendly</span>
+  </div>
+
+  <div class="tagline">One churn model. Eight markets. <b>The model was the easy part.</b></div>
+
+  <div class="seasons">
+    <div class="s1">
+      <div class="sh"><span class="sn">Season 1</span><span class="st">The Problem</span><span class="sq">What are we even measuring?</span></div>
+      <div class="cards">
+        <div class="c"><div class="th"><span class="ep">01</span></div><div class="ct">Nobody agreed what churn meant</div></div>
+        <div class="c"><div class="th"><span class="ep">02</span></div><div class="ct">Where the data actually lives</div></div>
+        <div class="c"><div class="th"><span class="ep">03</span></div><div class="ct">Features that don’t lie</div></div>
+      </div>
+    </div>
+    <div class="s2">
+      <div class="sh"><span class="sn">Season 2</span><span class="st">The Build</span><span class="sq">From notebook to system</span></div>
+      <div class="cards">
+        <div class="c"><div class="th"><span class="ep">04</span></div><div class="ct">Why the boring model won</div></div>
+        <div class="c"><div class="th"><span class="ep">05</span><span class="star">The turn</span></div><div class="ct">My metric was lying to me</div></div>
+        <div class="c"><div class="th"><span class="ep">06</span></div><div class="ct">A model that runs itself</div></div>
+      </div>
+    </div>
+    <div class="s3">
+      <div class="sh"><span class="sn">Season 3</span><span class="st">The Scale</span><span class="sq">One market becomes many</span></div>
+      <div class="cards">
+        <div class="c"><div class="th"><span class="ep">07</span></div><div class="ct">Making it explain itself</div></div>
+        <div class="c"><div class="th"><span class="ep">08</span><span class="star">The climax</span></div><div class="ct">What breaks when you go global</div></div>
+        <div class="c"><div class="th"><span class="ep">09</span></div><div class="ct">What it cost — and what you can copy</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kw">
+    <div class="kh">Every term explained along the way</div>
+    <div class="chips">
+      <span class="chip hot">Lakehouse</span><span class="chip">Delta Lake</span><span class="chip">Medallion</span>
+      <span class="chip hot">Unity Catalog</span><span class="chip hot">Genie</span><span class="chip">Compute &amp; DBUs</span>
+      <span class="chip hot">Feature Store</span><span class="chip hot">MLflow</span>
+      <span class="chip hot">Asset Bundles</span><span class="chip">Workflows</span><span class="chip">Drift monitoring</span>
+      <span class="chip">Foundation Model APIs</span><span class="chip hot">Delta Sharing</span><span class="chip">Data residency</span>
+      <span class="chip">System tables</span>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="fl"><b>Episode 1</b> · next week</div>
+    <div class="fr">
+      <div><div class="n">Prateek Kashyap</div><div class="u">LinkedIn · pratkashyap</div></div>
+      <svg viewBox="0 0 24 24" fill="#FF3621"><path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/></svg>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

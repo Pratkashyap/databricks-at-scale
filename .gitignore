@@ -1,0 +1,29 @@
+# data
+data/output/
+*.parquet
+*.csv
+!results/*.csv
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# env
+.env
+.databrickscfg
+
+# os
+.DS_Store
+Thumbs.db
+
+# private - never publish
+docs/private/
+
+# third-party reference images - not ours to publish
+design/refs/
+
+# local tool settings
+.claude/settings.local.json

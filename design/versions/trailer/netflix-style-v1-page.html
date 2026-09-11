@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Databricks at Scale — Series</title>
+<style>
+  :root{
+    --bg:#08080a; --bg2:#0f0f12; --card:#17171c; --card2:#1e1e24;
+    --ink:#ffffff; --ink2:#b6b6bd; --ink3:#76767f;
+    --red:#ff3621; --red2:#ff5a45;
+    --s1:#4a9eff; --s2:#ffb020; --s3:#25c692;
+    --line:#26262e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);
+       font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+
+  /* ---------- nav ---------- */
+  nav{display:flex;align-items:center;gap:13px;padding:22px 40px;position:sticky;top:0;
+      background:linear-gradient(180deg,rgba(8,8,10,.97),rgba(8,8,10,.75) 70%,transparent);
+      z-index:20;backdrop-filter:blur(6px)}
+  nav .mk{font-size:24px;line-height:1}
+  nav .nm{font-size:19px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+          color:var(--red)}
+  nav .rt{margin-left:auto;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;
+          color:var(--ink3);font-weight:700}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:34px 0 62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-180px -300px auto auto;width:900px;height:640px;
+      background:radial-gradient(closest-side,rgba(255,54,33,.22),transparent 72%);pointer-events:none}
+  .hero::after{content:"";position:absolute;left:-260px;top:120px;width:720px;height:560px;
+      background:radial-gradient(closest-side,rgba(74,158,255,.14),transparent 72%);pointer-events:none}
+  .hero .inner{position:relative;max-width:800px}
+
+  .badge{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:800;
+         letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);margin-bottom:20px}
+  .badge i{width:4px;height:16px;background:var(--red);border-radius:2px;display:block}
+
+  h1{font-size:88px;line-height:.9;letter-spacing:-.045em;font-weight:900;
+     text-transform:uppercase}
+  h1 .l2{display:block;color:var(--red)}
+
+  .meta{display:flex;flex-wrap:wrap;gap:11px;align-items:center;margin-top:26px;
+        font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink2)}
+  .meta .dot{width:3px;height:3px;border-radius:50%;background:var(--ink3)}
+  .meta .pill{border:1px solid var(--line);border-radius:5px;padding:4px 10px;color:var(--ink2)}
+
+  .tagline{font-size:27px;line-height:1.4;font-weight:700;margin-top:26px;letter-spacing:-.01em}
+  .syn{font-size:17.5px;line-height:1.65;color:var(--ink2);margin-top:18px;max-width:720px}
+  .syn b{color:var(--ink);font-weight:700}
+
+  .cta{display:flex;gap:13px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:6px;
+       font-size:15.5px;font-weight:800;text-decoration:none;letter-spacing:.01em}
+  .btn.a{background:var(--ink);color:#0b0b0d}
+  .btn.b{background:rgba(255,255,255,.13);color:var(--ink);border:1px solid var(--line)}
+
+  /* ---------- seasons ---------- */
+  .season{padding:0 0 50px}
+  .shead{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;
+         border-top:1px solid var(--line);padding-top:26px}
+  .snum{font-size:12.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+  .season.one .snum{color:var(--s1)} .season.two .snum{color:var(--s2)} .season.three .snum{color:var(--s3)}
+  .stitle{font-size:31px;font-weight:900;letter-spacing:-.025em;text-transform:uppercase}
+  .sline{margin-left:auto;font-size:15px;color:var(--ink3);font-style:italic}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .c{background:var(--card);border:1px solid var(--line);border-radius:11px;overflow:hidden;
+     display:flex;flex-direction:column}
+  .thumb{height:96px;position:relative;display:flex;align-items:center;justify-content:center}
+  .season.one .thumb{background:linear-gradient(135deg,#12233d,#0d1726)}
+  .season.two .thumb{background:linear-gradient(135deg,#3a2c10,#241c0c)}
+  .season.three .thumb{background:linear-gradient(135deg,#0e2f26,#0a1f19)}
+  .thumb .ep{font-size:52px;font-weight:900;letter-spacing:-.04em;opacity:.5}
+  .season.one .thumb .ep{color:var(--s1)} .season.two .thumb .ep{color:var(--s2)}
+  .season.three .thumb .ep{color:var(--s3)}
+  .thumb .star{position:absolute;top:11px;right:12px;font-size:10.5px;font-weight:800;
+       letter-spacing:.14em;text-transform:uppercase;background:var(--red);color:#fff;
+       padding:4px 9px;border-radius:4px}
+
+  .cb{padding:17px 19px 19px;display:flex;flex-direction:column;flex:1}
+  .ct{font-size:19.5px;font-weight:800;line-height:1.22;letter-spacing:-.015em}
+  .cd{font-size:15px;color:var(--ink2);line-height:1.5;margin-top:9px;flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}
+  .tag{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--ink3);
+       border:1px solid var(--line);border-radius:4px;padding:3px 8px;background:var(--bg2)}
+
+  /* ---------- covers strip ---------- */
+  .covers{border-top:1px solid var(--line);padding:34px 0 44px}
+  .covers h3{font-size:12.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+             color:var(--ink3);margin-bottom:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:13.5px;font-weight:600;color:var(--ink2);background:var(--card);
+        border:1px solid var(--line);border-radius:20px;padding:7px 15px}
+  .chip.hot{color:var(--ink);border-color:#4a2a24;background:#1d1210}
+
+  /* ---------- promise ---------- */
+  .promise{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+           border-top:1px solid var(--line);padding:34px 0 46px}
+  .pz .pt{font-size:15.5px;font-weight:800;margin-bottom:7px}
+  .pz .pp{font-size:14.5px;color:var(--ink2);line-height:1.5}
+  .pz .pn{font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+          color:var(--red);margin-bottom:9px}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding:34px 0 54px;display:flex;
+         justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+  .fl .fq{font-size:20px;font-weight:800;line-height:1.4;max-width:640px;letter-spacing:-.01em}
+  .fl .fs{font-size:15px;color:var(--ink3);margin-top:9px;line-height:1.5;max-width:620px}
+  .fr{text-align:right}
+  .fr .fn{font-size:22px;font-weight:900;letter-spacing:-.02em;display:flex;
+          align-items:center;gap:10px;justify-content:flex-end}
+  .fr .fd{font-size:14px;color:var(--ink3);margin-top:6px;letter-spacing:.02em}
+  .fr .fu{font-size:15px;color:var(--red2);margin-top:3px;font-weight:700;letter-spacing:.03em}
+
+  @media(max-width:980px){
+    .wrap{padding:0 22px} nav{padding:18px 22px}
+    h1{font-size:52px} .tagline{font-size:21px}
+    .cards{grid-template-columns:1fr} .promise{grid-template-columns:repeat(2,1fr)}
+    .sline{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="mk">🧱</span>
+  <span class="nm">Databricks at Scale</span>
+  <span class="rt">A build series</span>
+</nav>
+
+<div class="hero">
+  <div class="wrap"><div class="inner">
+    <div class="badge"><i></i> An original build series</div>
+    <h1>Databricks<span class="l2">at Scale</span></h1>
+
+    <div class="meta">
+      <span class="pill">2026</span><span class="dot"></span>
+      <span>3 Seasons</span><span class="dot"></span>
+      <span>9 Episodes</span><span class="dot"></span>
+      <span>Data &amp; AI</span><span class="dot"></span>
+      <span class="pill">Beginner friendly</span>
+    </div>
+
+    <div class="tagline">One churn model. Eight markets.<br>Everything I got wrong on the way.</div>
+
+    <div class="syn">A subscription business was losing customers and three teams reported three different numbers for it. This is the story of building the model that fixed that — <b>from a definition argument to a governed system running across eight markets</b> — and what I'd tell anyone doing it after me. Every layer of Databricks, explained as the story needed it.</div>
+
+    <div class="cta">
+      <a class="btn a" href="#s1">▶ &nbsp;Start with Episode 1</a>
+      <a class="btn b" href="#covers">＋ &nbsp;What it covers</a>
+    </div>
+  </div></div>
+</div>
+
+<div class="wrap">
+
+  <!-- SEASON 1 -->
+  <div class="season one" id="s1">
+    <div class="shead">
+      <span class="snum">Season 1</span>
+      <span class="stitle">The Problem</span>
+      <span class="sline">Before you can predict it, you have to agree what it is.</span>
+    </div>
+    <div class="cards">
+      <div class="c"><div class="thumb"><span class="ep">01</span></div><div class="cb">
+        <div class="ct">Nobody agreed what churn meant</div>
+        <div class="cd">Marketing said 4.2%. Finance said 3.8%. Product said 5.1%. Nobody was lying — and the fix wasn't better SQL.</div>
+        <div class="tags"><span class="tag">Lakehouse</span><span class="tag">Metric contracts</span><span class="tag">Unity Catalog</span></div>
+      </div></div>
+      <div class="c"><div class="thumb"><span class="ep">02</span></div><div class="cb">
+        <div class="ct">Where the data actually lives</div>
+        <div class="cd">Building on tables I didn't own, in a platform I only half understood. What broke, and what I had to learn first.</div>
+        <div class="tags"><span class="tag">Delta</span><span class="tag">Medallion</span><span class="tag">Compute &amp; cost</span></div>
+      </div></div>
+      <div class="c"><div class="thumb"><span class="ep">03</span></div><div class="cb">
+        <div class="ct">Features that don't lie</div>
+        <div class="cd">What people watched mattered more than who they were. And the last few days mattered more than all the rest.</div>
+        <div class="tags"><span class="tag">Feature engineering</span><span class="tag">Point-in-time</span><span class="tag">Serving skew</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- SEASON 2 -->
+  <div class="season two" id="s2">
+    <div class="shead">
+      <span class="snum">Season 2</span>
+      <span class="stitle">The Build</span>
+      <span class="sline">The model was the easy part. Trusting it wasn't.</span>
+    </div>
+    <div class="cards">
+      <div class="c"><div class="thumb"><span class="ep">04</span></div><div class="cb">
+        <div class="ct">Why the boring model won</div>
+        <div class="cd">I ran the bake-off across four algorithms and several designs. Then I threw most of it away, on purpose.</div>
+        <div class="tags"><span class="tag">MLflow</span><span class="tag">Experiments</span><span class="tag">Class imbalance</span></div>
+      </div></div>
+      <div class="c"><div class="thumb"><span class="ep">05</span><span class="star">The turn</span></div><div class="cb">
+        <div class="ct">My metric was lying to me</div>
+        <div class="cd">The score went up. The model hadn't improved. Pool markets with different base rates and the number rises on its own.</div>
+        <div class="tags"><span class="tag">Evaluation</span><span class="tag">Lift over base rate</span><span class="tag">Value → action</span></div>
+      </div></div>
+      <div class="c"><div class="thumb"><span class="ep">06</span></div><div class="cb">
+        <div class="ct">From a notebook to something that runs itself</div>
+        <div class="cd">The unglamorous work that turns a model into a system: deployed as config, promoted on a test, watched for drift.</div>
+        <div class="tags"><span class="tag">Asset Bundles</span><span class="tag">Workflows</span><span class="tag">Drift monitoring</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- SEASON 3 -->
+  <div class="season three" id="s3">
+    <div class="shead">
+      <span class="snum">Season 3</span>
+      <span class="stitle">The Scale</span>
+      <span class="sline">Eight markets worked. Forty is a different problem entirely.</span>
+    </div>
+    <div class="cards">
+      <div class="c"><div class="thumb"><span class="ep">07</span></div><div class="cb">
+        <div class="ct">Making it explain itself</div>
+        <div class="cd">A ranked list nobody can read is a list nobody uses. Turning scores into something a retention team can act on.</div>
+        <div class="tags"><span class="tag">Foundation Model APIs</span><span class="tag">Guardrails</span><span class="tag">Human in the loop</span></div>
+      </div></div>
+      <div class="c"><div class="thumb"><span class="ep">08</span><span class="star">The climax</span></div><div class="cb">
+        <div class="ct">What actually breaks when you go global</div>
+        <div class="cd">It was never the data volume. Governance breaks first, definitions second, people third. Cost only fourth.</div>
+        <div class="tags"><span class="tag">Data residency</span><span class="tag">Delta Sharing</span><span class="tag">Pooled vs per-market</span></div>
+      </div></div>
+      <div class="c"><div class="thumb"><span class="ep">09</span></div><div class="cb">
+        <div class="ct">What it cost, and what you can copy</div>
+        <div class="cd">The conversation most data people avoid — and the playbook, so you don't have to make the same mistakes.</div>
+        <div class="tags"><span class="tag">DBUs</span><span class="tag">System tables</span><span class="tag">Chargeback</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- COVERS -->
+  <div class="covers" id="covers">
+    <h3>Every term explained along the way — in plain English</h3>
+    <div class="chips">
+      <span class="chip hot">Lakehouse</span><span class="chip">Delta Lake</span><span class="chip">Medallion</span>
+      <span class="chip hot">Unity Catalog</span><span class="chip">Catalogs &amp; grants</span><span class="chip">Row filters</span>
+      <span class="chip">Lineage</span><span class="chip">Compute types</span><span class="chip">DBUs</span>
+      <span class="chip">Cluster policies</span><span class="chip">Spot vs on-demand</span><span class="chip">Photon</span>
+      <span class="chip">Databricks SQL</span><span class="chip hot">Genie</span><span class="chip">Metric contracts</span>
+      <span class="chip">Auto Loader</span><span class="chip">Workflows</span><span class="chip hot">Feature Store</span>
+      <span class="chip">Point-in-time correctness</span><span class="chip hot">MLflow</span><span class="chip">Model registry</span>
+      <span class="chip">Champion / candidate</span><span class="chip">Model serving</span><span class="chip hot">Asset Bundles</span>
+      <span class="chip">Lakehouse Monitoring</span><span class="chip">Drift &amp; PSI</span><span class="chip">Foundation Model APIs</span>
+      <span class="chip">Vector Search</span><span class="chip">Agent evaluation</span><span class="chip hot">Delta Sharing</span>
+      <span class="chip">Clean Rooms</span><span class="chip">Data residency</span><span class="chip">System tables</span>
+    </div>
+  </div>
+
+  <!-- PROMISE -->
+  <div class="promise">
+    <div class="pz"><div class="pn">For</div><div class="pt">Anyone starting out</div>
+      <div class="pp">No prior Databricks needed. Every term is defined the first time it appears.</div></div>
+    <div class="pz"><div class="pn">For</div><div class="pt">People already using it</div>
+      <div class="pp">The decisions and the tradeoffs, not the tutorials. Skip to the layer you're weakest on.</div></div>
+    <div class="pz"><div class="pn">For</div><div class="pt">Teams doing this now</div>
+      <div class="pp">A real architecture you can copy, and the mistakes you can skip.</div></div>
+    <div class="pz"><div class="pn">Always</div><div class="pt">Honest about cost</div>
+      <div class="pp">What each decision bought, and what it cost. The part product pages leave out.</div></div>
+  </div>
+
+  <footer>
+    <div class="fl">
+      <div class="fq">Every setting on this platform is buying you something at a price.</div>
+      <div class="fs">If you can't say what it bought you, you didn't choose it — you inherited it. That's the thread through all nine episodes.</div>
+    </div>
+    <div class="fr">
+      <div class="fn"><span>🧱</span> Prateek Kashyap</div>
+      <div class="fd">Analytics &amp; Data Science · Streaming &amp; Media · Singapore</div>
+      <div class="fu">LinkedIn — pratkashyap</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

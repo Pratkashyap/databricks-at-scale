@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Databricks at Scale — Episode 01 poster</title>
+<style>
+  :root{
+    --surface:#fcfcfb; --card:#ffffff;
+    --ink:#0b0b0b; --ink-2:#4a4945; --ink-3:#8a8882; --rule:#e5e4df;
+    --c1:#2a78d6; --c2:#eb6834; --c3:#1baf7a; --c4:#4a3aa7;
+    --t1:#eef4fc; --t2:#fdf0ea; --t3:#e9f7f2; --t4:#efedf8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#d9d8d4;display:flex;justify-content:center;padding:20px;
+       font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+  .poster{width:1080px;height:1350px;background:var(--surface);
+          padding:60px 66px 38px;display:flex;flex-direction:column;overflow:hidden}
+
+  .kicker{font-size:17px;letter-spacing:.16em;text-transform:uppercase;
+          color:var(--ink-3);font-weight:700}
+  h1{font-size:64px;line-height:1.02;letter-spacing:-.028em;color:var(--ink);
+     font-weight:700;margin-top:20px}
+  .sub{font-size:25px;color:var(--ink-2);margin-top:20px;line-height:1.5;max-width:900px}
+  .sub b{color:var(--ink);font-weight:700}
+
+  .rows{margin-top:34px}
+  .row{display:grid;grid-template-columns:56px 1fr 300px;align-items:center;
+       gap:22px;padding:19px 26px;border-radius:14px;margin-bottom:11px}
+  .row.a{background:var(--t1)} .row.b{background:var(--t2)}
+  .row.c{background:var(--t3)} .row.d{background:var(--t4)}
+  .num{width:44px;height:44px;border-radius:12px;color:#fff;font-size:22px;font-weight:700;
+       display:flex;align-items:center;justify-content:center}
+  .row.a .num{background:var(--c1)} .row.b .num{background:var(--c2)}
+  .row.c .num{background:var(--c3)} .row.d .num{background:var(--c4)}
+  .nm{font-size:29px;font-weight:700;color:var(--ink);line-height:1.15}
+  .ds{font-size:21px;color:var(--ink-2);margin-top:5px;line-height:1.35}
+  .stop{text-align:right}
+  .stop .lb{font-size:13.5px;letter-spacing:.13em;text-transform:uppercase;
+            color:var(--ink-3);font-weight:700}
+  .stop .vl{font-size:22px;color:var(--ink);font-weight:700;margin-top:5px;line-height:1.25}
+
+  .punch{margin-top:26px;background:var(--card);border:1px solid var(--rule);
+         border-left:6px solid var(--c2);border-radius:14px;padding:24px 30px}
+  .punch .h{font-size:30px;color:var(--ink);font-weight:700;line-height:1.3}
+  .punch .p{font-size:23px;color:var(--ink-2);margin-top:12px;line-height:1.5}
+
+  .foot{margin-top:auto;padding-top:26px;border-top:1px solid var(--rule);
+        display:flex;justify-content:space-between;align-items:flex-end;gap:36px}
+  .take{font-size:26px;color:var(--ink);font-weight:700;line-height:1.4;max-width:620px}
+  .take span{display:block;color:var(--ink-3);font-weight:400;font-size:23px;margin-top:7px}
+  .sig{text-align:right;font-size:17px;color:var(--ink-2);line-height:1.55;
+       white-space:nowrap;flex:none}
+  .sig .nm2{color:var(--ink);font-weight:700;font-size:20px}
+  .sig .sr{color:var(--ink-3)}
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="kicker">Databricks at Scale · Episode 01</div>
+  <h1>You’re renting<br>computers<br>by the second</h1>
+  <div class="sub">That’s what a Databricks bill is. <b>Four ways to rent them</b> — and the difference between them is when they stop.</div>
+
+  <div class="rows">
+    <div class="row a">
+      <div class="num">1</div>
+      <div><div class="nm">Always-on</div>
+           <div class="ds">You’re exploring, trying things, sharing with the team</div></div>
+      <div class="stop"><div class="lb">Stops when</div><div class="vl">someone stops it</div></div>
+    </div>
+    <div class="row b">
+      <div class="num">2</div>
+      <div><div class="nm">Per-job</div>
+           <div class="ds">A nightly report, a scheduled model run</div></div>
+      <div class="stop"><div class="lb">Stops when</div><div class="vl">the job finishes</div></div>
+    </div>
+    <div class="row c">
+      <div class="num">3</div>
+      <div><div class="nm">Serverless</div>
+           <div class="ds">Short, bursty work you can’t predict</div></div>
+      <div class="stop"><div class="lb">Stops when</div><div class="vl">the request ends</div></div>
+    </div>
+    <div class="row d">
+      <div class="num">4</div>
+      <div><div class="nm">SQL warehouse</div>
+           <div class="ds">Dashboards and everyday SQL questions</div></div>
+      <div class="stop"><div class="lb">Stops when</div><div class="vl">it goes idle</div></div>
+    </div>
+  </div>
+
+  <div class="punch">
+    <div class="h">Almost every wasted dollar is #1, left running.</div>
+    <div class="p">It doesn’t crash. It doesn’t alert anyone. It just quietly bills — overnight, over a weekend, over a holiday.</div>
+  </div>
+
+  <div class="foot">
+    <div class="take">Every setting here is buying you something at a price.
+      <span>If you can’t say what it bought, you didn’t choose it — you inherited it.</span></div>
+    <div class="sig">
+      <div class="nm2">🧱 Prateek Kashyap</div>
+      <div class="sr">Databricks at Scale</div>
+      <div>linkedin.com/in/pratkashyap</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

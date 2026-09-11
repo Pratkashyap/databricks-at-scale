@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Databricks at Scale — Episode 01 poster</title>
+<style>
+  :root{
+    --navy:#10294a; --ink:#1c2b3d; --ink-2:#4d5b6b; --ink-3:#8892a0;
+    --rule:#e2e6ec; --surface:#ffffff; --tint:#f5f7fa;
+    --acc:#e0442b;
+    --c1:#2a78d6; --c2:#eb6834; --c3:#1baf7a; --c4:#4a3aa7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#d9d8d4;display:flex;justify-content:center;padding:20px;
+       font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+  .p{width:1080px;height:1350px;background:var(--surface);padding:40px 46px 0;
+     display:flex;flex-direction:column;overflow:hidden;color:var(--ink)}
+
+  .brand{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+  .brand .bk{font-size:23px}
+  .brand .bt{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+  .brand .ep{margin-left:auto;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+             color:var(--ink-3);font-weight:700}
+
+  .head{display:grid;grid-template-columns:1fr 368px;gap:32px;align-items:start}
+  h1{font-size:57px;line-height:.98;letter-spacing:-.03em;color:var(--navy);font-weight:800}
+  .tag{font-size:22px;line-height:1.28;color:var(--acc);font-weight:700;margin-top:10px}
+  .lede{font-size:16px;line-height:1.55;color:var(--ink-2);margin-top:13px;max-width:600px}
+  .lede b{color:var(--ink);font-weight:700}
+
+  .dia{border:1px solid var(--rule);border-radius:12px;padding:13px 14px;background:var(--tint)}
+  .dia .dt{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);
+           font-weight:800;text-align:center;margin-bottom:9px}
+  .box{background:var(--surface);border:1px solid var(--rule);border-radius:9px;padding:9px 12px}
+  .box .bh{font-size:14.5px;font-weight:800;color:var(--navy)}
+  .box .bs{font-size:11.5px;color:var(--ink-3);font-weight:600;margin-top:1px}
+  .box ul{list-style:none;margin-top:6px}
+  .box li{font-size:12.5px;color:var(--ink-2);line-height:1.5;padding-left:11px;position:relative}
+  .box li::before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;
+                  border-radius:50%;background:var(--acc)}
+  .arrow{text-align:center;color:var(--acc);font-size:16px;line-height:1;margin:6px 0;font-weight:700}
+  .dnote{margin-top:9px;font-size:11.5px;color:var(--ink-2);text-align:center;line-height:1.4}
+  .dnote b{color:var(--navy)}
+
+  .hr{height:1px;background:var(--rule);margin:18px 0 14px;flex:none}
+  .sec{text-align:center;font-size:14.5px;letter-spacing:.17em;text-transform:uppercase;
+       color:var(--navy);font-weight:800;margin-bottom:13px}
+  .secL{font-size:14.5px;letter-spacing:.17em;text-transform:uppercase;
+        color:var(--navy);font-weight:800;margin-bottom:12px}
+
+  .four{display:grid;grid-template-columns:repeat(4,1fr)}
+  .w{padding:0 15px;text-align:center;border-right:1px solid var(--rule)}
+  .w:last-child{border-right:0}
+  .w svg{display:block;margin:0 auto 8px}
+  .w .wn{font-size:14.5px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.03em}
+  .w .wd{font-size:13px;color:var(--ink-2);line-height:1.42;margin-top:5px}
+  .w .ws{font-size:12.5px;color:var(--ink-3);margin-top:7px;line-height:1.3}
+  .w .ws b{display:block;color:var(--acc);font-weight:800;font-size:10.5px;
+           letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+
+  .two{display:grid;grid-template-columns:404px 1fr;gap:30px}
+  .step{display:grid;grid-template-columns:28px 1fr;gap:11px;margin-bottom:10px;align-items:start}
+  .sn{width:25px;height:25px;border-radius:50%;background:var(--navy);color:#fff;
+      font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}
+  .st{font-size:14px;color:var(--ink-2);line-height:1.42;padding-top:3px}
+  .st b{color:var(--navy);font-weight:700}
+
+  .code{background:#0f1b2b;border-radius:11px;padding:15px 17px;font-size:12.5px;
+        line-height:1.6;font-family:Consolas,"SF Mono",Menlo,monospace;color:#d8e2ee;overflow:hidden}
+  .cm{color:#71849b} .ky{color:#7fb2ff} .s2{color:#8fdba7} .nu{color:#f0a76a} .hl{color:#ff8a6b}
+
+  .lose{display:grid;grid-template-columns:repeat(5,1fr)}
+  .l{padding:0 11px;text-align:center;border-right:1px solid var(--rule)}
+  .l:last-child{border-right:0}
+  .l svg{display:block;margin:0 auto 6px}
+  .l .lt{font-size:12.5px;color:var(--ink-2);line-height:1.35;font-weight:600}
+
+  .band{margin-top:auto;margin-left:-46px;margin-right:-46px;background:var(--navy);
+        color:#fff;padding:22px 46px;display:grid;grid-template-columns:1fr 300px;
+        gap:32px;align-items:center}
+  .band .bl{font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+            color:#8fb4e0;font-weight:800;margin-bottom:6px}
+  .band .bb{font-size:20px;font-weight:700;line-height:1.32}
+  .band .bp{font-size:14.5px;color:#c2d2e6;line-height:1.45;margin-top:6px}
+  .band .sig{text-align:right;font-size:13.5px;color:#c2d2e6;line-height:1.6;white-space:nowrap}
+  .band .sig .n{font-size:16.5px;color:#fff;font-weight:800}
+</style>
+</head>
+<body>
+<div class="p">
+
+  <div class="brand">
+    <span class="bk">🧱</span><span class="bt">Databricks at Scale</span>
+    <span class="ep">Episode 01</span>
+  </div>
+
+  <div class="head">
+    <div>
+      <h1>Databricks<br>Compute</h1>
+      <div class="tag">What you’re renting, when it stops,<br>and where the money goes</div>
+      <div class="lede">Databricks doesn’t run your code — <b>your own cloud account does.</b> Every notebook, job and query runs on machines rented by the second. Which kind you pick is the biggest single lever on the bill, and most teams never actually choose.</div>
+    </div>
+
+    <div class="dia">
+      <div class="dt">It runs across two accounts</div>
+      <div class="box">
+        <div class="bh">Control plane</div>
+        <div class="bs">Databricks’ account</div>
+        <ul><li>The web UI and notebooks</li><li>The job scheduler</li><li>Table metadata</li></ul>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="box">
+        <div class="bh">Data plane</div>
+        <div class="bs">Your cloud account</div>
+        <ul><li>Machines start here</li><li>Your storage — data never leaves</li><li>Your IAM and networking</li></ul>
+      </div>
+      <div class="dnote">Which is why you’re billed twice:<br><b>DBUs to Databricks, machines to your cloud.</b></div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="sec">Four ways to rent — pick by workload, not habit</div>
+
+  <div class="four">
+    <div class="w">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#2a78d6" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+      <div class="wn">Always-on</div>
+      <div class="wd">Exploring, building, sharing with the team</div>
+      <div class="ws"><b>Stops when</b>someone stops it</div>
+    </div>
+    <div class="w">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#eb6834" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9.6 14.6l1.8 1.8 3.4-3.6"/></svg>
+      <div class="wn">Per-job</div>
+      <div class="wd">A nightly report, a scheduled model run</div>
+      <div class="ws"><b>Stops when</b>the job finishes</div>
+    </div>
+    <div class="w">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#1baf7a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></svg>
+      <div class="wn">Serverless</div>
+      <div class="wd">Short, bursty work you can’t predict</div>
+      <div class="ws"><b>Stops when</b>the request ends</div>
+    </div>
+    <div class="w">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#4a3aa7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+      <div class="wn">SQL warehouse</div>
+      <div class="wd">Dashboards and everyday SQL questions</div>
+      <div class="ws"><b>Stops when</b>it goes idle</div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="two">
+    <div>
+      <div class="secL">How the bill is built</div>
+      <div class="step"><div class="sn">1</div><div class="st">You start compute. Machines launch <b>in your cloud account.</b></div></div>
+      <div class="step"><div class="sn">2</div><div class="st">Your cloud provider bills you for those machines, by the second.</div></div>
+      <div class="step"><div class="sn">3</div><div class="st">Databricks bills you separately in <b>DBUs</b> — its own usage meter.</div></div>
+      <div class="step"><div class="sn">4</div><div class="st">The DBU rate <b>differs by compute type.</b> Always-on costs the most.</div></div>
+      <div class="step"><div class="sn">5</div><div class="st">Nothing stops on its own unless you configured it to.</div></div>
+    </div>
+
+    <div>
+      <div class="secL">The settings that matter</div>
+      <div class="code">
+<span class="cm"># a job cluster — and why each line is there</span><br>
+<span class="ky">spark_version</span>: <span class="s2">"16.4.x-scala2.12"</span>&nbsp;&nbsp;<span class="cm"># LTS: won't shift</span><br>
+<span class="ky">autoscale</span>: { <span class="ky">min_workers</span>: <span class="nu">1</span>, <span class="ky">max_workers</span>: <span class="nu">4</span> }<br>
+<br>
+<span class="ky">aws_attributes</span>:<br>
+&nbsp;&nbsp;<span class="ky">availability</span>: <span class="hl">"SPOT"</span><br>
+&nbsp;&nbsp;<span class="cm"># workers cheap — and interruptible</span><br>
+&nbsp;&nbsp;<span class="ky">first_on_demand</span>: <span class="nu">1</span><br>
+&nbsp;&nbsp;<span class="cm"># driver protected: lose it, lose the run</span><br>
+<br>
+<span class="ky">policy_id</span>: <span class="s2">"&lt;admin-issued&gt;"</span><br>
+<span class="cm"># caps the size, forces the cost tags</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="sec">Where the money actually leaks</div>
+  <div class="lose">
+    <div class="l">
+      <svg width="33" height="33" viewBox="0 0 24 24" fill="none" stroke="#e0442b" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+      <div class="lt">Always-on, left running overnight</div>
+    </div>
+    <div class="l">
+      <svg width="33" height="33" viewBox="0 0 24 24" fill="none" stroke="#e0442b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V11M10 20V4M16 20v-8M22 20H2"/></svg>
+      <div class="lt">Oversized clusters “to be safe”</div>
+    </div>
+    <div class="l">
+      <svg width="33" height="33" viewBox="0 0 24 24" fill="none" stroke="#e0442b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.4 8.3-8 9-4.6-.7-8-4-8-9V7z"/></svg>
+      <div class="lt">On-demand where spot was fine</div>
+    </div>
+    <div class="l">
+      <svg width="33" height="33" viewBox="0 0 24 24" fill="none" stroke="#e0442b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 3 4-6 5 4"/></svg>
+      <div class="lt">Paid accelerators on Python-bound work</div>
+    </div>
+    <div class="l">
+      <svg width="33" height="33" viewBox="0 0 24 24" fill="none" stroke="#e0442b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10H7z"/><path d="M4 4l16 16"/></svg>
+      <div class="lt">No tags, so nobody can attribute it</div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div>
+      <div class="bl">The rule that runs through every episode</div>
+      <div class="bb">Every setting here is buying you something at a price.</div>
+      <div class="bp">Spot buys a discount and costs you retries. LTS buys stability and costs you new features. If you can’t say what a setting bought you, you didn’t choose it — you inherited it.</div>
+    </div>
+    <div class="sig">
+      <div class="n">🧱 Prateek Kashyap</div>
+      <div>Databricks at Scale</div>
+      <div>linkedin.com/in/pratkashyap</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

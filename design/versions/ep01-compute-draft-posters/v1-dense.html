@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Databricks at Scale — Episode 01 poster</title>
+<style>
+  :root{
+    --surface:#fcfcfb; --card:#ffffff;
+    --ink:#0b0b0b; --ink-2:#52514e; --ink-3:#86847e; --rule:#e5e4df;
+    --c1:#2a78d6; --c2:#eb6834; --c3:#1baf7a; --c4:#4a3aa7;
+    --t1:#eef4fc; --t2:#fdf0ea; --t3:#e9f7f2; --t4:#efedf8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#d9d8d4;display:flex;justify-content:center;padding:20px;
+       font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+  .poster{width:1080px;height:1350px;background:var(--surface);
+          padding:52px 58px 36px;display:flex;flex-direction:column;overflow:hidden}
+
+  .kicker{font-size:16px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+  h1{font-size:50px;line-height:1.05;letter-spacing:-.022em;color:var(--ink);font-weight:700;margin-top:12px}
+  .sub{font-size:21px;color:var(--ink-2);margin-top:11px;line-height:1.45;max-width:880px}
+  .hr{height:1px;background:var(--rule);margin:19px 0 17px;flex:none}
+  .sec{font-size:14.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
+       font-weight:700;margin-bottom:14px}
+
+  .planes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .plane{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:18px 22px}
+  .plane h3{font-size:22px;color:var(--ink);font-weight:700;display:flex;align-items:baseline;gap:10px}
+  .plane h3 em{font-style:normal;font-size:15px;color:var(--ink-3);font-weight:600}
+  .plane p{font-size:17.5px;color:var(--ink-2);line-height:1.5;margin-top:8px}
+  .planes-note{font-size:16.5px;color:var(--ink-3);margin-top:12px;text-align:center}
+  .planes-note b{color:var(--ink-2)}
+
+  .lane{display:grid;grid-template-columns:46px 218px 1fr 200px;align-items:center;
+        border-radius:10px;padding:12px 18px;margin-bottom:7px;gap:14px}
+  .lane.a{background:var(--t1);border-left:4px solid var(--c1)}
+  .lane.b{background:var(--t2);border-left:4px solid var(--c2)}
+  .lane.c{background:var(--t3);border-left:4px solid var(--c3)}
+  .lane.d{background:var(--t4);border-left:4px solid var(--c4)}
+  .num{width:32px;height:32px;border-radius:9px;color:#fff;font-size:17px;font-weight:700;
+       display:flex;align-items:center;justify-content:center}
+  .lane.a .num{background:var(--c1)} .lane.b .num{background:var(--c2)}
+  .lane.c .num{background:var(--c3)} .lane.d .num{background:var(--c4)}
+  .lname{font-size:21px;font-weight:700;color:var(--ink)}
+  .luse{font-size:17.5px;color:var(--ink-2);line-height:1.3}
+  .lruns{font-size:16px;color:var(--ink);text-align:right;line-height:1.25;font-weight:600}
+  .lruns b{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+           color:var(--ink-3);font-weight:700;margin-bottom:2px}
+  .note{font-size:16.5px;color:var(--ink-3);margin-top:12px}
+  .note b{color:var(--ink-2)}
+
+  .knobs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .knob{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px 20px}
+  .knob h4{font-size:20px;color:var(--ink);font-weight:700}
+  .knob .q{font-size:16px;color:var(--ink-3);margin:4px 0 14px}
+  .row{display:flex;align-items:center;gap:11px;margin-bottom:9px}
+  .chip{font-size:11.5px;font-weight:700;letter-spacing:.05em;padding:4px 9px;border-radius:6px;
+        text-transform:uppercase;white-space:nowrap;flex:none}
+  .chip.on{background:#fdf0ea;color:#a8390e;border:1px solid #f2bda2}
+  .chip.sp{background:#e9f7f2;color:#0d6b4a;border:1px solid #a9ddc9}
+  .row .lbl{font-size:17px;color:var(--ink);font-weight:700}
+  .row .why{font-size:16px;color:var(--ink-2);margin-top:1px}
+  .mark{width:21px;height:21px;border-radius:6px;flex:none;display:flex;align-items:center;
+        justify-content:center;font-size:13px;font-weight:700;color:#fff;margin-top:2px}
+  .mark.y{background:var(--c3)} .mark.n{background:#c2413f}
+  .yn{display:flex;gap:10px;align-items:flex-start;margin-bottom:9px}
+  .yn .txt{font-size:16.5px;color:var(--ink-2);line-height:1.4}
+  .yn .txt b{color:var(--ink)}
+  .kfoot{font-size:16px;color:var(--ink-2);margin-top:10px;line-height:1.4;
+         padding-top:11px;border-top:1px solid var(--rule)}
+
+  .foot{margin-top:auto;padding-top:18px;border-top:1px solid var(--rule);
+        display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+  .rule-line{font-size:20px;color:var(--ink);font-weight:700;line-height:1.45}
+  .rule-line span{color:var(--ink-3);font-weight:400;display:block;margin-top:3px}
+  .sig{text-align:right;font-size:15.5px;color:var(--ink-2);line-height:1.5;white-space:nowrap;flex:none}
+  .sig .nm{color:var(--ink);font-weight:700;font-size:17.5px}
+  .sig .sr{color:var(--ink-3)}
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="kicker">Databricks at Scale · Episode 01</div>
+  <h1>What you're actually<br>running on</h1>
+  <div class="sub">Most people learn Databricks as “the place my notebooks run.” That’s enough to be productive — not enough to be accountable for the bill.</div>
+
+  <div class="hr"></div>
+
+  <div class="sec">It runs across two accounts</div>
+  <div class="planes">
+    <div class="plane">
+      <h3>Control plane <em>Databricks’ account</em></h3>
+      <p>The UI, notebook source, the job scheduler, table metadata.</p>
+    </div>
+    <div class="plane">
+      <h3>Data plane <em>your cloud account</em></h3>
+      <p>Cluster VMs launch here. Your storage — data never leaves.</p>
+    </div>
+  </div>
+  <div class="planes-note">Which is why you’re billed twice: <b>DBUs to Databricks, VMs to your cloud provider.</b></div>
+
+  <div class="hr"></div>
+
+  <div class="sec">Four kinds of compute — pick by workload, not habit</div>
+
+  <div class="lane a"><div class="num">1</div><div class="lname">All-purpose</div>
+    <div class="luse">Interactive development, shared exploration</div>
+    <div class="lruns"><b>Runs until</b>someone stops it</div></div>
+  <div class="lane b"><div class="num">2</div><div class="lname">Job cluster</div>
+    <div class="luse">Anything scheduled — train, score, monitor</div>
+    <div class="lruns"><b>Runs until</b>the job ends</div></div>
+  <div class="lane c"><div class="num">3</div><div class="lname">Serverless</div>
+    <div class="luse">Short, bursty, unpredictable work</div>
+    <div class="lruns"><b>Runs until</b>the request ends</div></div>
+  <div class="lane d"><div class="num">4</div><div class="lname">SQL warehouse</div>
+    <div class="luse">SQL, dashboards, BI tools</div>
+    <div class="lruns"><b>Runs until</b>auto-stop kicks in</div></div>
+
+  <div class="note">The most common wasted spend in any workspace is <b>#1, left running.</b> It never raises an incident. It just bills.</div>
+
+  <div class="hr"></div>
+
+  <div class="sec">The two knobs that move the bill</div>
+  <div class="knobs">
+    <div class="knob">
+      <h4>Spot vs on-demand</h4>
+      <div class="q">Spot is discounted capacity that can be reclaimed.</div>
+      <div class="row"><span class="chip on">On-demand</span>
+        <div><div class="lbl">Driver</div><div class="why">Lose it → the whole run dies</div></div></div>
+      <div class="row"><span class="chip sp">Spot</span>
+        <div><div class="lbl">Workers</div><div class="why">Lose one → the task just retries</div></div></div>
+      <div class="kfoot">Take the discount where interruption is survivable. Pay full price where it isn’t.</div>
+    </div>
+    <div class="knob">
+      <h4>Photon</h4>
+      <div class="q">A vectorised engine — it accelerates only some work.</div>
+      <div class="yn"><div class="mark y">✓</div>
+        <div class="txt"><b>SQL &amp; DataFrame steps.</b> Feature builds, aggregations, joins.</div></div>
+      <div class="yn"><div class="mark n">✕</div>
+        <div class="txt"><b>Python on the driver.</b> An XGBoost fit in pandas has nothing vectorised to accelerate.</div></div>
+      <div class="kfoot">Enabling it everywhere isn’t diligence. It’s a premium paid for no gain.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="rule-line">Every compute setting is buying something at a price.
+      <span>If you can’t say what it bought you, you didn’t choose it — you inherited it.</span></div>
+    <div class="sig">
+      <div class="nm">🧱 Prateek Kashyap</div>
+      <div class="sr">Databricks at Scale</div>
+      <div>linkedin.com/in/pratkashyap</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
