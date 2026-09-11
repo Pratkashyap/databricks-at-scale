@@ -54,7 +54,7 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 
 ## Git
 
-- Repo: `github.com/Pratkashyap/databricks-at-scale`, branch `main`, currently **private**.
+- Repo: `github.com/Pratkashyap/databricks-at-scale`, branch `main`, **public** since 2026-09-11. Anyone can see everything that's pushed, so the brand-name and confidentiality checks before each push are essential.
 - **Commit identity is set per repo** to Prateek's GitHub no-reply address. The machine's global git identity is his *work* email, and it must never appear in this repo. Check with `git config user.email` before committing.
 - Before every push, confirm `docs/private/` and `design/refs/` are ignored: `git check-ignore -v docs/private/discovery_answers.md`.
 - End commit messages with `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`.
@@ -63,3 +63,4 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 
 - **2026-09-11**: Skill created. Trailer posted. Episode 01 drafted. Repo pushed to GitHub (private). Structure: `learn.md` is the detailed doc and `post.md` is the summary. PNG export moved to a Playwright script, because headless Edge was unreliable.
 - **2026-09-11**: Full brand-name scan (all files, git history, GitHub metadata): clean. "No employer or brand names" made an explicit rule. `LinkedIn Posters/` renamed to `LinkedIn/`, and each episode folder now holds post, poster and article.
+- **2026-09-11**: Repo made public at Prateek's request.

@@ -56,7 +56,7 @@ What's the metric at your company with the most definitions? 👇
 ## Before you post
 
 - [ ] **Truth check:** the markets really did define churn differently (renewal window, reconnects, failed payments)
-- [ ] **The repo link:** the post says "link in the comments". Only add that comment if the GitHub repo is **public**. While it's private, delete that line from the post.
+- [ ] **The repo link:** the repo is public. Right after posting, add this as the first comment: https://github.com/Pratkashyap/databricks-at-scale/tree/main/episodes/01-nobody-agreed-what-churn-meant
 - [ ] Nothing names your employer, markets, figures or internal systems
 - [ ] Post a week after the trailer, on a weekday morning in your audience's time zone
 - [ ] Reply to every comment in the first hour

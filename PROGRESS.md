@@ -1,7 +1,7 @@
 # Progress
 
 **Last updated:** 2026-09-11
-**Where we are:** Trailer is live on LinkedIn. Episode 01 is drafted and waiting for Prateek's review.
+**Where we are:** Trailer is live on LinkedIn. Episode 01 is drafted and waiting for Prateek's review. The repo is **public**: https://github.com/Pratkashyap/databricks-at-scale
 
 ---
 
@@ -11,7 +11,7 @@ In order:
 
 1. **Review Episode 01**: [`learn.md`](episodes/01-nobody-agreed-what-churn-meant/learn.md), [`post.md`](episodes/01-nobody-agreed-what-churn-meant/post.md) and [`poster.png`](episodes/01-nobody-agreed-what-churn-meant/poster.png). Mark anything that didn't happen the way it's described.
 2. **Truth check before posting.** Confirm the markets really did define churn differently (renewal window, reconnects, payment failures), and whether payment-failure cycles were dropped or kept as "not churned".
-3. **Decide repo visibility.** The repo is **private** for now. Make it public before Episode 01 goes out if the post will point to it. Check `design/design-log.md` and this file first, because they contain working notes.
+3. ✅ **Repo made public** on 2026-09-11. Episode 01's "link in the comments" can point to it.
 4. **Post Episode 01** next week. Everything is in `../LinkedIn/01-nobody-agreed-what-churn-meant/` (post, poster, article).
 5. **After posting:** add the repo link as the first comment, and reply to every comment in the first hour.
 6. **Confirm the certification target** against 2–3 real job descriptions.
@@ -29,6 +29,7 @@ In order:
 | 2026-09-11 | Databricks logo adopted. Trailer poster built in three styles. **Trailer posted on LinkedIn** (Option B text, Netflix-style v2 poster) |
 | 2026-09-11 | Episode 01 drafted: learning doc, post, poster and cert prep. Files reorganised. `PROGRESS.md` and the project skill created. Repo pushed to GitHub (private) |
 | 2026-09-11 | Brand-name scan of every file, the git history and GitHub: clean. `LinkedIn Posters/` renamed `LinkedIn/` and now holds post, poster and article per episode |
+| 2026-09-11 | Repo made **public**. Confirmed it opens without signing in |
 
 ---
 
@@ -54,7 +55,7 @@ In order:
 | # | Decision | Status |
 |---|---|---|
 | 1 | **Truth check**: some early story beats started as teaching examples. Anything not confirmed is framed as "what happens if you don't", never "I did this" | ⏳ Prateek |
-| 2 | **Repo visibility**: private now; public before it's linked from a post? | ⏳ Prateek |
+| 2 | **Repo visibility** | ✅ Public since 2026-09-11 |
 | 3 | **Certification target**: ML Professional is the working assumption | ⏳ Prateek |
 | 4 | **Public framing**: visible episode numbers or named arc only? | 🗓 After Ep 02, using engagement data |
 
