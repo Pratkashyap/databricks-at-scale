@@ -1,6 +1,6 @@
 # Trailer: the series intro post
 
-> **Choose A or B.** Both open with what you built, then tell the story. Copy the one you pick from `LinkedIn Posters/`, paste it into LinkedIn, and attach `00-trailer-netflix-v2 (POST THIS).png`.
+> **Choose A or B.** Both open with what you built, then tell the story. Copy the one you pick from `LinkedIn/`, paste it into LinkedIn, and attach `00-trailer-netflix-v2 (POST THIS).png`.
 > The bold is **Unicode bold**, so it stays bold when pasted.
 
 ---

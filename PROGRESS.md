@@ -12,7 +12,7 @@ In order:
 1. **Review Episode 01**: [`learn.md`](episodes/01-nobody-agreed-what-churn-meant/learn.md), [`post.md`](episodes/01-nobody-agreed-what-churn-meant/post.md) and [`poster.png`](episodes/01-nobody-agreed-what-churn-meant/poster.png). Mark anything that didn't happen the way it's described.
 2. **Truth check before posting.** Confirm the markets really did define churn differently (renewal window, reconnects, payment failures), and whether payment-failure cycles were dropped or kept as "not churned".
 3. **Decide repo visibility.** The repo is **private** for now. Make it public before Episode 01 goes out if the post will point to it. Check `design/design-log.md` and this file first, because they contain working notes.
-4. **Post Episode 01** next week. Copy the files from `LinkedIn Posters/01-nobody-agreed-what-churn-meant/`.
+4. **Post Episode 01** next week. Everything is in `../LinkedIn/01-nobody-agreed-what-churn-meant/` (post, poster, article).
 5. **After posting:** add the repo link as the first comment, and reply to every comment in the first hour.
 6. **Confirm the certification target** against 2–3 real job descriptions.
 7. **Start Episode 02.** Reuse the compute material in `../_archive/ep01-compute-draft/`.
@@ -28,6 +28,7 @@ In order:
 | 2026-09-08 | Discovery questionnaire answered (kept private). Curriculum rebuilt as a **9-episode narrative**. Design log started |
 | 2026-09-11 | Databricks logo adopted. Trailer poster built in three styles. **Trailer posted on LinkedIn** (Option B text, Netflix-style v2 poster) |
 | 2026-09-11 | Episode 01 drafted: learning doc, post, poster and cert prep. Files reorganised. `PROGRESS.md` and the project skill created. Repo pushed to GitHub (private) |
+| 2026-09-11 | Brand-name scan of every file, the git history and GitHub: clean. `LinkedIn Posters/` renamed `LinkedIn/` and now holds post, poster and article per episode |
 
 ---
 
@@ -71,7 +72,7 @@ Every episode ships five files in `episodes/NN-name/`:
 | `cert-prep.md` | About 15 minutes of recall. Never mentioned in posts |
 | `README.md` | Short index page for GitHub |
 
-After exporting, copy `poster.png` and the post text into `../LinkedIn Posters/NN-name/`.
+After exporting, copy the post, poster and learn.md (as `READY - article.md`) into `../LinkedIn/NN-name/`.
 
 ---
 
