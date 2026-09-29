@@ -57,6 +57,7 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 
 - Repo: `github.com/Pratkashyap/databricks-at-scale`, branch `main`, **public** since 2026-09-11. Anyone can see everything that's pushed, so the brand-name and confidentiality checks before each push are essential.
 - **Commit identity is set per repo** to Prateek's GitHub no-reply address. The machine's global git identity is his *work* email, and it must never appear in this repo. Check with `git config user.email` before committing.
+- **Never `git add -A` blind.** Review `git status` first and read any file you did not write. Third-party material (other people's posts, downloaded images) goes to `docs/private/` or `../_archive/` — publishing someone else's writing under Prateek's name reads as plagiarism. This happened once on 2026-09-29 and had to be purged from history.
 - Before every push, confirm `docs/private/` and `design/refs/` are ignored: `git check-ignore -v docs/private/discovery_answers.md`.
 - End commit messages with `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`.
 
@@ -65,4 +66,5 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 - **2026-09-11**: Skill created. Trailer posted. Episode 01 drafted. Repo pushed to GitHub (private). Structure: `learn.md` is the detailed doc and `post.md` is the summary. PNG export moved to a Playwright script, because headless Edge was unreliable.
 - **2026-09-11**: Full brand-name scan (all files, git history, GitHub metadata): clean. "No employer or brand names" made an explicit rule. `LinkedIn Posters/` renamed to `LinkedIn/`, and each episode folder now holds post, poster and article.
 - **2026-09-11**: Repo made public at Prateek's request.
+- **2026-09-29**: A collected file of other authors' posts was committed unread and pushed to the public repo; purged from history via amend + force-push, moved to `docs/private/`. Rule added: never commit a file you didn't write.
 - **2026-09-29**: Episode 01 rebuilt after an honest audit: only 1 of 14 poster blocks was about Databricks. Added the stack strip, the annotated SQL and the mechanism chips; added the logo test and the feature ownership map.

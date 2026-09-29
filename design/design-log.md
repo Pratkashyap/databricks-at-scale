@@ -90,6 +90,21 @@ Voice: *"From my experience…"*, *"I learned…"* — personal narrative carryi
 
 ---
 
+### Ref 05 · Two Databricks posts by other authors — overlap check
+📎 *Collected by Prateek, 2026-09-29. Kept privately at `docs/private/other-peoples-posts.txt` — third-party writing, never published in this repo.*
+
+**Post A — "Embedding a Databricks Genie Agent into an External Application".** Genie inside someone else's app: architecture arrow-flow, then the unglamorous list (auth, data access, Unity Catalog governance, session management, API, monitoring and cost).
+**Post B — "Levels of RAG".** A five-level maturity ladder, written for interview prep.
+
+**Overlap with our series: low, and worth knowing.**
+- Genie appears in ours only as a *learning next* chip in Episode 01. Episode 07 is GenAI, but through `ai_query` and Foundation Model APIs for batch comms generation — **not** Genie embedding. Different subject, so no clash; it does confirm Genie is a live topic, which makes the Episode 01 chip well timed.
+- RAG is in Episode 07 as *not used yet*. When we write it, avoid the generic "levels of RAG" explainer that already exists everywhere; our angle is **evaluation with a rubric and guardrails over governed data**, which neither post covers.
+
+**What to take:** emoji as section markers · very short lines · a text arrow-flow for architecture · a "my takeaway" section · a closing question.
+**What they don't have, and we do:** a real system behind the words, actual code, what it cost, and a trade-off. Both are concept explainers with no build and no series arc. **That contrast is our differentiation — keep leaning on it.**
+
+---
+
 ## 2. What we built, and the verdicts
 
 ### Episode 01 poster v2 · Databricks-forward — ⏳ AWAITING VERDICT
@@ -207,6 +222,7 @@ Derived from the above. Apply to every episode without re-asking.
 - Filled, colourful icons; visible bold/regular contrast; generous white space
 
 **Never**
+- Commit a file you didn't write. Read anything that appears in `git status` before staging; third-party content belongs in `docs/private/` or `../_archive/`, never in the repo
 - Thin uniform line icons
 - Vendor-marketing tone ("scalable, reliable, cost effective")
 - Three ideas competing on one image
