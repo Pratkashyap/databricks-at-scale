@@ -105,6 +105,27 @@ Voice: *"From my experience…"*, *"I learned…"* — personal narrative carryi
 
 ---
 
+### Ref 06 · The published trailer — the house style for every post
+📎 *Screenshot of the live post, shared 2026-09-29. Recorded verbatim in `episodes/00-trailer/post.md`.*
+
+Prateek edited our draft before publishing, and the edits were consistent enough to become the rule. **Match this for every future post.**
+
+| Rule | Detail |
+|---|---|
+| **No emoji in the body** | Every 🎬 🧱 💡 📍 marker was removed. Arrows `→` are the only symbol |
+| **No capitalised headings** | "WHERE DATABRICKS CAME IN" became a short bold sentence lead-in ending in `:` |
+| **No separator lines** | The long rules were dropped; a blank line does the separating |
+| **Short paragraphs** | One to three lines each, blank line between |
+| **Bold only on key phrases** | Inline, never whole paragraphs |
+| **Lists** | `→` at the start of a line; `·` for inline separators |
+| **Close** | One forward-looking line ("Episode 1 drops next week"), then hashtags. **He dropped the closing question** |
+| **Hashtags** | About 10, broader than ours (`#agenticAI #churn #mlops #SingaporeAI #DubaiAI`), plus company and product tags after them |
+| **His words** | "**Intelligent Churn Prediction System**" and "**Global markets**" — not "a churn model" or "eight markets" |
+
+**One trade-off worth knowing:** dropping the closing question usually costs comments, and comments are what spread a post. If Episode 1 gets light engagement, putting one short question back before the hashtags is the cheapest fix.
+
+---
+
 ## 2. What we built, and the verdicts
 
 ### Episode 02 poster · the three-band template, reused — ⏳ AWAITING VERDICT
