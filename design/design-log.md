@@ -107,6 +107,24 @@ Voice: *"From my experience…"*, *"I learned…"* — personal narrative carryi
 
 ## 2. What we built, and the verdicts
 
+### Episode 02 poster · the three-band template, reused — ⏳ AWAITING VERDICT
+*2026-09-29.* `episodes/02-where-the-data-lives/ep02-poster.html`.
+
+The v3 shape from Episode 01 applied a second time, which proves it is a **template** rather than a one-off:
+1. **The problem** — other teams' tables → three real failures → "the job dies, or worse, it runs and is quietly wrong".
+2. **The fix** — the medallion layers as four boxes (bronze → silver → gold → *my gold*, highlighted red), with an ownership line underneath: read-only on the left, mine on the right.
+3. **The decision** — the two habits: cast safely, and check before you run.
+
+192 words, no code. Databricks is the middle band again.
+
+**The canonical build strip** is now fixed for the whole series, and every episode lights its own stage:
+`Data · Definition · Features · Model · Evaluation · Serving · Monitoring`
+Ep 01 lights *Definition*, Ep 02 lights *Data*, Ep 03 *Features*, Ep 04 *Model*, Ep 05 *Evaluation*, Ep 06 *Serving + Monitoring*. Season 3 episodes light the whole strip, because they are about the system as a whole. Episode 01 was updated to this strip so the series stays consistent.
+
+**File naming, fixed from here on:** `epNN-learn.md`, `epNN-post.md`, `epNN-poster.html`, `epNN-poster.png`, `epNN-cert-prep.md`, plus `README.md`. A downloaded `poster.png` is anonymous; `ep02-poster.png` is not.
+
+---
+
 ### Episode 01 poster v3 · picture-first — ⏳ AWAITING VERDICT
 *2026-09-29.* Prateek on v2: *"don't need the code… read it as a layman… less text, more boxes or flow."*
 

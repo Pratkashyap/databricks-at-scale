@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Databricks at Scale — Episode 02 poster</title>
+<style>
+  :root{
+    --bg1:#0c1820; --bg2:#13242e; --card:#182a35;
+    --ink:#ffffff; --ink2:#b9c6cc; --ink3:#7f9199; --dim:#54666f;
+    --red:#ff3621; --line:#2a3f4b; --s1:#4a9eff; --good:#25c692; --warn:#ffb020;
+    --bronze:#c88a4b; --silver:#9fb3bd; --gold:#e8c05a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg1)}
+  body{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  .p{width:1080px;height:1350px;padding:46px 54px 36px;display:flex;flex-direction:column;position:relative;overflow:hidden;
+     background:linear-gradient(165deg,var(--bg2) 0%,var(--bg1) 55%,#0a141b 100%)}
+  .p::before{content:"";position:absolute;right:-260px;top:-240px;width:820px;height:640px;
+     background:radial-gradient(closest-side,rgba(255,54,33,.22),transparent 72%)}
+  .p > *{position:relative;z-index:1}
+
+  .badge{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2)}
+  .badge i{width:4px;height:16px;background:var(--red);border-radius:2px;display:block}
+  .badge .s{color:var(--s1)}
+  .badge .series{margin-left:auto;color:var(--ink3);letter-spacing:.18em}
+  .title{display:grid;grid-template-columns:auto 1fr;column-gap:20px;margin-top:16px;align-items:start}
+  .logo{width:82px;height:82px;margin-top:2px}
+  h1{font-size:72px;line-height:.95;letter-spacing:-.04em;font-weight:900;text-transform:uppercase}
+  h1 .l2{display:block;color:var(--red)}
+  .sub{font-size:27px;font-weight:600;color:var(--ink2);margin-top:22px}
+  .sub b{color:#fff;font-weight:800}
+
+  .h{font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);margin:48px 0 18px}
+
+  /* band 1 */
+  .mess{display:grid;grid-template-columns:200px 34px 1fr 34px 210px;align-items:center}
+  .mk{background:var(--card);border:1.5px solid var(--line);border-radius:13px;padding:28px 16px;text-align:center}
+  .mk .lb{font-size:20px;font-weight:800;line-height:1.2}
+  .mk .cap{font-size:15px;color:var(--ink3);margin-top:6px}
+  .arw{text-align:center;color:var(--dim);font-size:22px;font-weight:700}
+  .qs{display:flex;flex-direction:column;gap:9px}
+  .q{background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:18px 16px;font-size:18px;color:var(--ink2)}
+  .q b{color:#fff;font-weight:700}
+  .bad{background:rgba(255,54,33,.09);border:1.5px solid #6a2a22;border-radius:13px;padding:20px 14px;text-align:center}
+  .bad .big{font-size:23px;font-weight:900;color:var(--red);line-height:1.2}
+  .bad .cap{font-size:16px;color:var(--ink2);margin-top:7px;line-height:1.3}
+
+  /* band 2 - medallion */
+  .med{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr 26px 1fr;align-items:center}
+  .lay{background:var(--card);border:1.5px solid var(--line);border-radius:13px;padding:24px 14px;text-align:center}
+  .lay .dot{width:22px;height:22px;border-radius:50%;margin:0 auto 9px}
+  .lay .t{font-size:21px;font-weight:900}
+  .lay .c{font-size:15px;color:var(--ink3);margin-top:5px;line-height:1.3}
+  .lay.mine{border:2px solid var(--red);background:#1d3442;box-shadow:0 0 0 4px rgba(255,54,33,.12)}
+  .lay.mine .c{color:var(--ink2)}
+  .owner{display:grid;grid-template-columns:calc(50% + 13px) 1fr;gap:0;margin-top:11px;font-size:15px}
+  .owner div{text-align:center;color:var(--ink3);border-top:1.5px dashed var(--line);padding-top:12px}
+  .owner b{color:var(--ink2)}
+
+  /* band 3 */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .k{background:var(--card);border:1.5px solid var(--line);border-radius:13px;padding:26px 20px;display:flex;align-items:center;gap:14px}
+  .k.in{border-color:#1f6b53} .k.out{border-color:#6b5520}
+  .k .tick{font-size:22px;font-weight:900;flex:none}
+  .k.in .tick{color:var(--good)} .k.out .tick{color:var(--warn)}
+  .k .kn{font-size:21px;font-weight:900}
+  .k .kw{font-size:16.5px;color:var(--ink2);margin-top:2px}
+
+  .strip{margin-top:38px;display:flex;align-items:center;gap:6px}
+  .sl{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);white-space:nowrap;margin-right:6px}
+  .sn{flex:1;border:1.5px solid var(--line);border-radius:8px;padding:11px 3px;text-align:center;font-size:12.5px;color:var(--dim);opacity:.75}
+  .sn.on{opacity:1;color:#fff;font-weight:800;border-color:var(--red);background:rgba(255,54,33,.1)}
+
+  .take{margin-top:auto;padding-top:22px;font-size:26px;font-weight:800;line-height:1.35}
+  .take span{color:var(--red)}
+  .foot{margin-top:18px;padding-top:14px;border-top:1.5px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+  .fl{font-size:16.5px;font-weight:700;color:var(--ink2)} .fl b{color:#fff}
+  .fr{display:flex;align-items:center;gap:12px;text-align:right}
+  .fr .n{font-size:20px;font-weight:900}
+  .fr .u{font-size:14.5px;font-weight:700;color:var(--red);margin-top:2px}
+  .fr svg{width:38px;height:38px}
+</style>
+</head>
+<body>
+<div class="p">
+
+  <div class="badge"><i></i> Episode 02 · <span class="s">Season 1 · The Problem</span>
+    <span class="series">Databricks at Scale</span></div>
+
+  <div class="title">
+    <svg class="logo" viewBox="0 0 24 24" fill="#FF3621"><path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/></svg>
+    <h1>Where the data<span class="l2">actually lives</span></h1>
+  </div>
+  <div class="sub">I didn't own <b>a single table I depended on.</b></div>
+
+  <div class="h">The problem</div>
+  <div class="mess">
+    <div class="mk"><div class="lb">Other teams'<br>tables</div><div class="cap">my only source</div></div>
+    <div class="arw">→</div>
+    <div class="qs">
+      <div class="q">A number arrived as <b>text</b> in some markets</div>
+      <div class="q">The month <b>hadn't landed</b> yet</div>
+      <div class="q">Nothing <b>announced</b> the change</div>
+    </div>
+    <div class="arw">→</div>
+    <div class="bad"><div class="big">The job dies.<br>Or worse —</div><div class="cap">it runs, and the answer is quietly wrong</div></div>
+  </div>
+
+  <div class="h">The fix — layers, and knowing which one is yours</div>
+  <div class="med">
+    <div class="lay"><div class="dot" style="background:var(--bronze)"></div><div class="t">Bronze</div><div class="c">raw, as it arrived</div></div>
+    <div class="arw">→</div>
+    <div class="lay"><div class="dot" style="background:var(--silver)"></div><div class="t">Silver</div><div class="c">cleaned, conformed</div></div>
+    <div class="arw">→</div>
+    <div class="lay"><div class="dot" style="background:var(--gold)"></div><div class="t">Gold</div><div class="c">trusted, business-ready</div></div>
+    <div class="arw">→</div>
+    <div class="lay mine"><div class="dot" style="background:var(--red)"></div><div class="t">My gold</div><div class="c">what I build and own</div></div>
+  </div>
+  <div class="owner">
+    <div>Owned by the platform team — <b>I only read it</b></div>
+    <div>Mine — <b>I read defensively, then publish</b></div>
+  </div>
+
+  <div class="h">The two habits that stopped the 2 a.m. failures</div>
+  <div class="two">
+    <div class="k in"><span class="tick">✓</span><div><div class="kn">Never trust a column's type</div>
+      <div class="kw">Cast safely — a bad value becomes empty, not a dead job</div></div></div>
+    <div class="k in"><span class="tick">✓</span><div><div class="kn">Check before you run</div>
+      <div class="kw">No new month, no run. The job stops itself</div></div></div>
+  </div>
+
+  <div class="strip">
+    <span class="sl">The build</span>
+    <div class="sn on">Data</div>
+    <div class="sn">Definition</div>
+    <div class="sn">Features</div>
+    <div class="sn">Model</div>
+    <div class="sn">Evaluation</div>
+    <div class="sn">Serving</div>
+    <div class="sn">Monitoring</div>
+  </div>
+
+  <div class="take">You can't control the tables you don't own.<br><span>You can control how you read them.</span></div>
+
+  <div class="foot">
+    <div class="fl"><b>Next</b> · Episode 3: Features that don't lie</div>
+    <div class="fr">
+      <div><div class="n">Prateek Kashyap</div><div class="u">LinkedIn · pratkashyap</div></div>
+      <svg viewBox="0 0 24 24" fill="#FF3621"><path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/></svg>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

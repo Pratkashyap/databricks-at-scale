@@ -1,7 +1,7 @@
 # Progress
 
 **Last updated:** 2026-09-11
-**Where we are:** Trailer is live on LinkedIn. Episode 01 is drafted and waiting for Prateek's review. The repo is **public**: https://github.com/Pratkashyap/databricks-at-scale
+**Where we are:** Trailer is live on LinkedIn. **Episodes 01 and 02 are built and ready to post**, awaiting Prateek's review. The repo is **public**: https://github.com/Pratkashyap/databricks-at-scale
 
 ---
 
@@ -12,10 +12,10 @@ In order:
 1. **Review Episode 01**: [`learn.md`](episodes/01-nobody-agreed-what-churn-meant/learn.md), [`post.md`](episodes/01-nobody-agreed-what-churn-meant/post.md) and [`poster.png`](episodes/01-nobody-agreed-what-churn-meant/poster.png). Mark anything that didn't happen the way it's described.
 2. **Truth check before posting.** Confirm the markets really did define churn differently (renewal window, reconnects, payment failures), and whether payment-failure cycles were dropped or kept as "not churned".
 3. ✅ **Repo made public** on 2026-09-11. Episode 01's "link in the comments" can point to it.
-4. **Post Episode 01** next week. Everything is in `../LinkedIn/01-nobody-agreed-what-churn-meant/` (post, poster, article).
+4. **Post Episode 01**, then Episode 02 a week later. Everything is in `../LinkedIn/NN-.../` (post, poster, article).
 5. **After posting:** add the repo link as the first comment, and reply to every comment in the first hour.
 6. **Confirm the certification target** against 2–3 real job descriptions.
-7. **Start Episode 02.** Reuse the compute material in `../_archive/ep01-compute-draft/`.
+7. **Start Episode 03** (Features that don't lie): behaviour beat demographics, and recency beat everything. Feature Store is *not used* — write it as learning next.
 
 ---
 
@@ -30,6 +30,7 @@ In order:
 | 2026-09-11 | Episode 01 drafted: learning doc, post, poster and cert prep. Files reorganised. `PROGRESS.md` and the project skill created. Repo pushed to GitHub (private) |
 | 2026-09-11 | Brand-name scan of every file, the git history and GitHub: clean. `LinkedIn Posters/` renamed `LinkedIn/` and now holds post, poster and article per episode |
 | 2026-09-11 | Repo made **public**. Confirmed it opens without signing in |
+| 2026-09-29 | **Episode 02 built**: learn, post, poster, cert prep. Three-band poster template confirmed. Canonical build strip fixed for the series. Files renamed to `epNN-*` |
 | 2026-09-29 | Episode 01 poster v3: picture-first, no code, Unity Catalog at the centre. Post simplified to plain language |
 | 2026-09-29 | Episode 01 poster and post rebuilt: the Databricks content was one block out of fourteen. Added the "you are here" stack strip, the SQL, and the feature ownership map |
 
@@ -40,8 +41,8 @@ In order:
 | Ep | Title | Learn | Post | Poster | Cert | Posted |
 |---|---|---|---|---|---|---|
 | 00 | Trailer | — | ✅ | ✅ | — | ✅ 2026-09-11 |
-| 01 | Nobody agreed what churn meant | 🔍 review | 🔍 review | 🔍 review | ✅ | ⬜ |
-| 02 | Where the data actually lives | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 01 | Nobody agreed what churn meant | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
+| 02 | Where the data actually lives | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
 | 03 | Features that don't lie | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 04 | Why the boring model won | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 05 | My metric was lying to me ⭐ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
