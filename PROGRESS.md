@@ -30,6 +30,7 @@ In order:
 | 2026-09-11 | Episode 01 drafted: learning doc, post, poster and cert prep. Files reorganised. `PROGRESS.md` and the project skill created. Repo pushed to GitHub (private) |
 | 2026-09-11 | Brand-name scan of every file, the git history and GitHub: clean. `LinkedIn Posters/` renamed `LinkedIn/` and now holds post, poster and article per episode |
 | 2026-09-11 | Repo made **public**. Confirmed it opens without signing in |
+| 2026-09-29 | Episode 01 poster v3: picture-first, no code, Unity Catalog at the centre. Post simplified to plain language |
 | 2026-09-29 | Episode 01 poster and post rebuilt: the Databricks content was one block out of fourteen. Added the "you are here" stack strip, the SQL, and the feature ownership map |
 
 ---

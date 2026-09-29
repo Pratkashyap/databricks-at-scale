@@ -107,6 +107,21 @@ Voice: *"From my experience…"*, *"I learned…"* — personal narrative carryi
 
 ## 2. What we built, and the verdicts
 
+### Episode 01 poster v3 · picture-first — ⏳ AWAITING VERDICT
+*2026-09-29.* Prateek on v2: *"don't need the code… read it as a layman… less text, more boxes or flow."*
+
+**What went wrong in v2:** fixing "too much business" by adding a big SQL block over-corrected. The largest element on the poster was the one a non-Databricks reader skips, so the message was lost again.
+
+**v3:** three picture bands, no code, 145 words total.
+1. **The problem** — 8 markets → three real ambiguities (renewal window, cancel-and-return, failed payment) → "8 versions of one number".
+2. **The fix** — One definition → **Unity Catalog** (logo, red, centre of the page) → dashboards, notebooks, the model. Caption: "every tool reads the same one." Databricks is now literally the middle of the diagram.
+3. **The decision** — voluntary in, involuntary out.
+Plus a slim build strip (definition → features → training → registry → scores → monitoring) with this episode lit.
+
+**Rule added: the layman test.** Read it as someone who has never opened Databricks. If the biggest thing on the page is something they'd skip, rebuild. Code belongs in `learn.md`, not on the poster.
+
+---
+
 ### Episode 01 poster v2 · Databricks-forward — ⏳ AWAITING VERDICT
 *2026-09-29.*
 
