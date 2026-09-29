@@ -30,6 +30,7 @@ In order:
 | 2026-09-11 | Episode 01 drafted: learning doc, post, poster and cert prep. Files reorganised. `PROGRESS.md` and the project skill created. Repo pushed to GitHub (private) |
 | 2026-09-11 | Brand-name scan of every file, the git history and GitHub: clean. `LinkedIn Posters/` renamed `LinkedIn/` and now holds post, poster and article per episode |
 | 2026-09-11 | Repo made **public**. Confirmed it opens without signing in |
+| 2026-09-29 | Episode 01 poster and post rebuilt: the Databricks content was one block out of fourteen. Added the "you are here" stack strip, the SQL, and the feature ownership map |
 
 ---
 
@@ -58,6 +59,26 @@ In order:
 | 2 | **Repo visibility** | ✅ Public since 2026-09-11 |
 | 3 | **Certification target**: ML Professional is the working assumption | ⏳ Prateek |
 | 4 | **Public framing**: visible episode numbers or named arc only? | 🗓 After Ep 02, using engagement data |
+
+---
+
+## Databricks feature ownership
+
+Each feature belongs to **one** episode, so nothing is spent twice. Features from other episodes may appear **dim in the stack strip**, never explained.
+
+| Ep | The Databricks it owns |
+|---|---|
+| 01 | Unity Catalog · `catalog.schema.table` · governed gold table · `COMMENT ON TABLE` · metric views + Genie *(not used yet → learning next)* |
+| 02 | Delta · medallion and upstream gold · compute: job clusters, Databricks Connect, SQL warehouse, cluster policy, LTS runtime, spot vs on-demand, Photon · `TRY_CAST` and schema drift · Workflows freshness gate |
+| 03 | Feature table design · point-in-time correctness · training/serving skew · Feature Store *(not used → next)* |
+| 04 | MLflow experiments and tracking · model selection · class imbalance |
+| 05 | Evaluation: PR AUC vs lift over base rate · value→action thresholds |
+| 06 | Asset Bundles (one bundle, four targets) · Workflows orchestration · UC model registry with `@champion`/`@candidate` and a statistical promotion gate · predictions table · KS/PSI drift and the retrain trigger · Lakehouse Monitoring and serving endpoints *(not used → next)* |
+| 07 | `ai_query` · Foundation Model APIs · output guardrails · Vector Search and RAG *(not used → next)* |
+| 08 | Data residency · per-region catalogs · Delta Sharing · Clean Rooms · pooled vs per-market models |
+| 09 | DBUs · resource tags · `system.billing.usage` · chargeback · the reference architecture |
+
+**Truth guard:** anything marked *not used* must be written as "what I'm learning next", never as something already built.
 
 ---
 

@@ -92,7 +92,23 @@ Voice: *"From my experience…"*, *"I learned…"* — personal narrative carryi
 
 ## 2. What we built, and the verdicts
 
-### Episode 01 poster v1 · Netflix style, first content episode — ⏳ AWAITING VERDICT
+### Episode 01 poster v2 · Databricks-forward — ⏳ AWAITING VERDICT
+*2026-09-29.*
+
+Prateek's audit of v1: *"the poster talks more about the business or churn but nothing about Databricks."* He was right — **1 of 14 blocks** was about the platform, and it was the smallest, last one. v1 also failed the **logo test**: cover the logo and it could have been a Snowflake or dbt post.
+
+**v2 changes:**
+- **"You are here" stack strip** — the six stages of the real churn system (churn label → features → training → registry → daily scores → monitoring) with Unity Catalog and Asset Bundles as the layers beneath. This episode's box is lit; the rest are dim. It shows the full breadth of the build in one glance **without spending content that Episodes 02–09 own**, and it repeats on every poster as a progress bar for the series.
+- **The annotated SQL is now the largest block**: the contract as three `WHERE` clauses plus `COMMENT ON TABLE`. A mechanism, not a claim.
+- Six contract cards compressed into the SQL comments; the trap reduced to one caption line.
+- Three mechanism chips, one marked *learning next* (metric views + Genie), which serves the learning-in-the-open goal.
+- The series name now appears on the poster.
+
+**Rules added:** the logo test · the series name on every poster · at least one concrete mechanism per poster · stay in your episode's lane (see the ownership map in `PROGRESS.md`).
+
+---
+
+### Episode 01 poster v1 · Netflix style, first content episode — ❌ REPLACED by v2
 *2026-09-11. `episodes/01-nobody-agreed-what-churn-meant/poster.html` → `poster.png`.*
 
 The first content episode in the series style: an episode and season badge, the logo on the title line, the voluntary/involuntary split as two cards, the six-field contract as a numbered grid, "the trap" (averaging rates) next to "where it lives" (Unity Catalog), and the takeaway in white and red.

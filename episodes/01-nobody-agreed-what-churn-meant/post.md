@@ -1,9 +1,9 @@
 # Episode 01 · LinkedIn post
 
-> **Summary of [`learn.md`](learn.md).** Copy the text in the box, paste it into LinkedIn and attach [`poster.png`](poster.png).
-> Bold is Unicode bold, so it stays bold when pasted. **2,374 of 3,000 characters.**
+> **Summary of [`learn.md`](learn.md).** Copy the box, paste into LinkedIn, attach [`poster.png`](poster.png).
+> Bold is Unicode bold, so it survives pasting. **2,461 of 3,000 characters** (bold letters count double).
 
-**Before "…see more":** 🎬 𝗘𝗽𝗶𝘀𝗼𝗱𝗲 𝟭 · Databricks at Scale / 𝗡𝗼𝗯𝗼𝗱𝘆 𝗮𝗴𝗿𝗲𝗲𝗱 𝘄𝗵𝗮𝘁 𝗰𝗵𝘂𝗿𝗻 𝗺𝗲𝗮𝗻𝘁. /  / Before I trained a single model, I had to answer a question that sounds too simple to matter: / 𝘄𝗵𝗮𝘁 𝗮𝗰𝘁𝘂𝗮𝗹𝗹𝘆 𝗰𝗼𝘂𝗻𝘁𝘀 𝗮𝘀 𝗰𝗵𝘂𝗿𝗻? /  / Across eight mark…
+**Before "…see more":** 🎬 𝗘𝗽𝗶𝘀𝗼𝗱𝗲 𝟭 · Databricks at Scale / 𝗡𝗼𝗯𝗼𝗱𝘆 𝗮𝗴𝗿𝗲𝗲𝗱 𝘄𝗵𝗮𝘁 𝗰𝗵𝘂𝗿𝗻 𝗺𝗲𝗮𝗻𝘁. /  / I built a churn prediction system that scores subscribers across eight markets, every day. Before any of it, one question: 𝘄𝗵𝗮𝘁 𝗮𝗰𝘁𝘂𝗮𝗹𝗹𝘆 𝗰𝗼𝘂𝗻𝘁𝘀…
 
 ---
 
@@ -11,44 +11,46 @@
 🎬 𝗘𝗽𝗶𝘀𝗼𝗱𝗲 𝟭 · Databricks at Scale
 𝗡𝗼𝗯𝗼𝗱𝘆 𝗮𝗴𝗿𝗲𝗲𝗱 𝘄𝗵𝗮𝘁 𝗰𝗵𝘂𝗿𝗻 𝗺𝗲𝗮𝗻𝘁.
 
-Before I trained a single model, I had to answer a question that sounds too simple to matter:
-𝘄𝗵𝗮𝘁 𝗮𝗰𝘁𝘂𝗮𝗹𝗹𝘆 𝗰𝗼𝘂𝗻𝘁𝘀 𝗮𝘀 𝗰𝗵𝘂𝗿𝗻?
+I built a churn prediction system that scores subscribers across eight markets, every day. Before any of it, one question: 𝘄𝗵𝗮𝘁 𝗮𝗰𝘁𝘂𝗮𝗹𝗹𝘆 𝗰𝗼𝘂𝗻𝘁𝘀 𝗮𝘀 𝗰𝗵𝘂𝗿𝗻?
 
-Across eight markets, it didn't mean the same thing.
-Different renewal windows. Different rules for someone who cancels and comes back. Different views on whether a failed payment counts.
+Across eight markets it didn't mean the same thing. Different renewal windows. Different rules for someone who cancels and comes back. Different views on whether a failed payment counts.
 
-Pool that into one model and you're not predicting one thing.
-𝗬𝗼𝘂'𝗿𝗲 𝗽𝗿𝗲𝗱𝗶𝗰𝘁𝗶𝗻𝗴 𝗲𝗶𝗴𝗵𝘁 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝘁 𝘁𝗵𝗶𝗻𝗴𝘀 𝗮𝗻𝗱 𝗰𝗮𝗹𝗹𝗶𝗻𝗴 𝘁𝗵𝗲𝗺 𝗼𝗻𝗲.
+Pool that into one model and 𝘆𝗼𝘂'𝗿𝗲 𝗽𝗿𝗲𝗱𝗶𝗰𝘁𝗶𝗻𝗴 𝗲𝗶𝗴𝗵𝘁 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝘁 𝘁𝗵𝗶𝗻𝗴𝘀 𝗮𝗻𝗱 𝗰𝗮𝗹𝗹𝗶𝗻𝗴 𝘁𝗵𝗲𝗺 𝗼𝗻𝗲.
 
-So the first thing I built wasn't a model. It was a 𝗰𝗼𝗻𝘁𝗿𝗮𝗰𝘁 👇
+━━━━━━━━━━
 
-📌 𝗘𝗻𝘁𝗶𝘁𝘆 — one paid billing cycle, not a user
-📌 𝗘𝘃𝗲𝗻𝘁 — the subscriber chose to cancel
-📌 𝗣𝗼𝗽𝘂𝗹𝗮𝘁𝗶𝗼𝗻 — first and second paid months only
-📌 𝗘𝘅𝗰𝗹𝘂𝗱𝗲𝗱 — payment failures
-📌 𝗧𝗶𝗺𝗶𝗻𝗴 — labelled only once the renewal window closes
-📌 𝗥𝗼𝗹𝗹-𝘂𝗽 — add up across markets, then divide. 𝗡𝗲𝘃𝗲𝗿 𝗮𝘃𝗲𝗿𝗮𝗴𝗲 𝘁𝗵𝗲 𝗿𝗮𝘁𝗲𝘀.
+𝗧𝗵𝗲 𝗱𝗲𝗰𝗶𝘀𝗶𝗼𝗻 𝘁𝗵𝗮𝘁 𝗰𝗮𝗺𝗲 𝗯𝗲𝗳𝗼𝗿𝗲 𝘁𝗵𝗲 𝗺𝗼𝗱𝗲𝗹
 
-The biggest call: 𝘃𝗼𝗹𝘂𝗻𝘁𝗮𝗿𝘆 𝗮𝗻𝗱 𝗶𝗻𝘃𝗼𝗹𝘂𝗻𝘁𝗮𝗿𝘆 𝗰𝗵𝘂𝗿𝗻 𝗮𝗿𝗲 𝘁𝘄𝗼 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝘁 𝗽𝗿𝗼𝗯𝗹𝗲𝗺𝘀.
-Someone who cancels needs a reason to stay.
-Someone whose card failed needs a payment retry.
-Mix them, and the retention budget goes to people who never meant to leave.
+𝗩𝗼𝗹𝘂𝗻𝘁𝗮𝗿𝘆 — they chose to cancel → give them a reason to stay.
+𝗜𝗻𝘃𝗼𝗹𝘂𝗻𝘁𝗮𝗿𝘆 — their payment failed → retry the payment.
 
-🧱 𝗪𝗵𝗲𝗿𝗲 𝗗𝗮𝘁𝗮𝗯𝗿𝗶𝗰𝗸𝘀 𝗰𝗼𝗺𝗲𝘀 𝗶𝗻
-A contract only works if it lives where everyone reads from, not in five different dashboards.
-In Databricks that's Unity Catalog: one governed home for the churn label, the features and even the model, all under the same access rules.
+Two different problems. Only voluntary went into the label. Mix them, and the retention budget goes to people who never meant to leave.
 
-𝗪𝗵𝗮𝘁 𝗶𝘁 𝗰𝗼𝘀𝘁: a narrower target, fewer examples to learn from, and a model that deliberately says nothing about failed payments. Every one of those on purpose, and written down.
+━━━━━━━━━━
 
-💡 𝗜𝗳 𝘁𝘄𝗼 𝘁𝗲𝗮𝗺𝘀 𝗰𝗮𝗻'𝘁 𝗮𝗴𝗿𝗲𝗲 𝗼𝗻 𝘁𝗵𝗲 𝗻𝘂𝗺𝗯𝗲𝗿, 𝗮 𝗯𝗲𝘁𝘁𝗲𝗿 𝗺𝗼𝗱𝗲𝗹 𝘄𝗼𝗻'𝘁 𝗳𝗶𝘅 𝗶𝘁. 𝗔 𝘄𝗿𝗶𝘁𝘁𝗲𝗻 𝗱𝗲𝗳𝗶𝗻𝗶𝘁𝗶𝗼𝗻 𝘄𝗶𝗹𝗹.
+🧱 𝗧𝗵𝗲𝗻 𝗜 𝘄𝗿𝗼𝘁𝗲 𝗶𝘁 𝗶𝗻𝘁𝗼 𝗗𝗮𝘁𝗮𝗯𝗿𝗶𝗰𝗸𝘀, 𝗻𝗼𝘁 𝗶𝗻𝘁𝗼 𝗮 𝘀𝗹𝗶𝗱𝗲
 
-The full breakdown — the SQL, the "you can't average churn rates" trap, and a checklist for any metric — is in my GitHub repo (link in the comments).
+→ 𝗰𝗮𝘁𝗮𝗹𝗼𝗴.𝘀𝗰𝗵𝗲𝗺𝗮.𝘁𝗮𝗯𝗹𝗲 — one name (analytics.gold.churn_label) that every notebook, dashboard and job resolves the same way. No more five private versions of "churn".
+
+→ 𝗧𝗵𝗲 𝗿𝘂𝗹𝗲𝘀 𝗹𝗶𝘃𝗲 𝗶𝗻 𝘁𝗵𝗲 𝗾𝘂𝗲𝗿𝘆. Three WHERE clauses carry the contract: who counts, what's excluded, when it's known.
+
+→ 𝗖𝗢𝗠𝗠𝗘𝗡𝗧 𝗢𝗡 𝗧𝗔𝗕𝗟𝗘 — the definition is attached to the table, so whoever finds it reads the contract next to the data.
+
+→ 𝗢𝗻𝗲 𝗴𝗼𝘃𝗲𝗿𝗻𝗮𝗻𝗰𝗲 𝗹𝗮𝘆𝗲𝗿. The same Unity Catalog rules cover the label, the features and the registered model.
+
+Next for me: 𝗺𝗲𝘁𝗿𝗶𝗰 𝘃𝗶𝗲𝘄𝘀 and 𝗚𝗲𝗻𝗶𝗲, so the aggregation rule stops depending on everyone writing the query correctly.
+
+𝗪𝗵𝗮𝘁 𝗶𝘁 𝗰𝗼𝘀𝘁: a narrower target, fewer examples, and a model that says nothing about failed payments. On purpose, and written down.
+
+💡 𝗔 𝗯𝗲𝘁𝘁𝗲𝗿 𝗺𝗼𝗱𝗲𝗹 𝘄𝗼𝗻'𝘁 𝗳𝗶𝘅 𝗮 𝗻𝘂𝗺𝗯𝗲𝗿 𝗻𝗼𝗯𝗼𝗱𝘆 𝗮𝗴𝗿𝗲𝗲𝘀 𝗼𝗻. 𝗔 𝗴𝗼𝘃𝗲𝗿𝗻𝗲𝗱 𝗱𝗲𝗳𝗶𝗻𝗶𝘁𝗶𝗼𝗻 𝘄𝗶𝗹𝗹.
+
+Full breakdown — the SQL, the "you can't average churn rates" trap, and a checklist for any metric — is in the repo (link in the comments).
 
 Next week · 𝗘𝗽𝗶𝘀𝗼𝗱𝗲 𝟮: 𝗪𝗵𝗲𝗿𝗲 𝘁𝗵𝗲 𝗱𝗮𝘁𝗮 𝗮𝗰𝘁𝘂𝗮𝗹𝗹𝘆 𝗹𝗶𝘃𝗲𝘀
 
 What's the metric at your company with the most definitions? 👇
 
-#Databricks #DataScience #MachineLearning #UnityCatalog #Analytics
+#Databricks #UnityCatalog #DataEngineering #DataScience #MachineLearning
 ```
 
 ---
@@ -56,7 +58,8 @@ What's the metric at your company with the most definitions? 👇
 ## Before you post
 
 - [ ] **Truth check:** the markets really did define churn differently (renewal window, reconnects, failed payments)
-- [ ] **The repo link:** the repo is public. Right after posting, add this as the first comment: https://github.com/Pratkashyap/databricks-at-scale/tree/main/episodes/01-nobody-agreed-what-churn-meant
-- [ ] Nothing names your employer, markets, figures or internal systems
+- [ ] **Truth check:** `analytics.gold.churn_label` and the SQL are illustrative with generic names — confirm they resemble nothing internal
+- [ ] **The repo link:** right after posting, add this as the first comment: https://github.com/Pratkashyap/databricks-at-scale/tree/main/episodes/01-nobody-agreed-what-churn-meant
+- [ ] Nothing names your employer, its brands, markets, figures or internal systems
 - [ ] Post a week after the trailer, on a weekday morning in your audience's time zone
 - [ ] Reply to every comment in the first hour

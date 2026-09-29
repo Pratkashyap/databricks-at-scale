@@ -39,7 +39,7 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 1. Read `PROGRESS.md`, `design/design-log.md` §3 (settled rules) and `docs/private/discovery_answers.md` for the facts.
 2. **`learn.md`**: situation → why it matters → the concepts → the decision in the project → the Databricks part (with illustrative SQL or code using generic names) → what it cost → what you can copy → key terms → check yourself → next episode.
 3. **`post.md`**: summarise `learn.md` in the series voice. Bold with Unicode (convert `**x**` markers with the bold map; see `design-log.md`). Keep product names and "Databricks" in plain text in the body so search can find them. Aim for 1,500–2,200 of LinkedIn's 3,000 characters, and make sure the first 210 characters carry the hook.
-4. **`poster.html`**: Netflix style with a dark Databricks-navy gradient, the logo on the title line, 1080×1350 and minimal text. Export with `python design/export_png.py episodes/NN-name/poster.html`, fix any overflow warning, then **look at the PNG**.
+4. **`poster.html`**: Netflix style with a dark Databricks-navy gradient, the logo on the title line, 1080×1350 and minimal text. **Every poster must pass three checks:** (a) the *logo test* — cover the logo and something still identifies Databricks; (b) the series name appears on it; (c) at least one **concrete mechanism** — a real name, command or snippet — not just a claim like "governed". Carry the **"you are here" stack strip** (churn label → features → training → registry → scores → monitoring, with Unity Catalog and Asset Bundles beneath), lighting this episode's box and dimming the rest. Export with `python design/export_png.py episodes/NN-name/poster.html`, fix any overflow warning, then **look at the PNG**.
 5. **`cert-prep.md`**: a recall table, 2–3 applied questions and a spaced-repetition note.
 6. Copy into `../LinkedIn/NN-name/` as `READY - post.txt`, `READY - poster.png` and `READY - article.md` (a copy of learn.md). After Prateek posts, rename `READY -` to `POSTED -`.
 7. Update `PROGRESS.md` (status, log, next steps) and this skill's changelog. Commit and push.
@@ -50,6 +50,7 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 - **Never name the employer or any of its brands or products**, in any file, commit message or image. Always write "a subscription streaming business". Before every push, scan the repo, the git history and `../LinkedIn/`.
 - **Confidentiality:** describe methods and patterns only. No figures, no market names, no internal table, tool or catalog names, no employer-specific details. Illustrative numbers are labelled as made up.
 - **Feature names:** Databricks renames and ships features quickly. Flag anything recent (metric views, Genie and similar) to be checked against the current docs.
+- **Stay in your episode's lane.** `PROGRESS.md` holds the feature ownership map; each Databricks feature is explained in exactly one episode. Other episodes' features may appear dim in the stack strip, never explained.
 - **Signature:** Prateek Kashyap · LinkedIn · **pratkashyap** (username as text, never a URL).
 
 ## Git
@@ -64,3 +65,4 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 - **2026-09-11**: Skill created. Trailer posted. Episode 01 drafted. Repo pushed to GitHub (private). Structure: `learn.md` is the detailed doc and `post.md` is the summary. PNG export moved to a Playwright script, because headless Edge was unreliable.
 - **2026-09-11**: Full brand-name scan (all files, git history, GitHub metadata): clean. "No employer or brand names" made an explicit rule. `LinkedIn Posters/` renamed to `LinkedIn/`, and each episode folder now holds post, poster and article.
 - **2026-09-11**: Repo made public at Prateek's request.
+- **2026-09-29**: Episode 01 rebuilt after an honest audit: only 1 of 14 poster blocks was about Databricks. Added the stack strip, the annotated SQL and the mechanism chips; added the logo test and the feature ownership map.
