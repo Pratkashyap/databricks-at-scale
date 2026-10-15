@@ -146,6 +146,23 @@ Length to aim for: **2,100–2,600 characters**. Episode 02 came in at 2,405.
 
 ---
 
+### Episode 02, second pass — the post and the image must answer the same questions
+*2026-10-15.* Prateek: *"still looks too off beat, I cannot connect the story to the image."*
+
+**Root cause:** the post named three failures (a column arriving as text, a month not landed, no announcement) and then named two Delta features (schema enforcement, time travel) that solve **none of them**. Schema enforcement protects what *you* write; it does nothing about a bad column upstream. A practitioner feels that gap even without naming it, and the expertise stops landing.
+
+**Fix — one-to-one pairing**, in both the post and the poster:
+
+| What broke | The Databricks answer |
+|---|---|
+| A number arrived as text | `TRY_CAST` — bad value becomes empty, and count them |
+| The month hadn't landed | A freshness gate as the Workflow's first task |
+| Nobody announced the change | Delta table history — every version kept |
+
+**Rule for every episode from here:** list the problems, then answer each one with a named Databricks mechanism. Never list capabilities that don't solve a problem you just described — that is what makes a post feel like a brochure. The poster must show the same pairs, in the same order.
+
+---
+
 ## 2. What we built, and the verdicts
 
 ### Episode 02 poster · the three-band template, reused — ⏳ AWAITING VERDICT

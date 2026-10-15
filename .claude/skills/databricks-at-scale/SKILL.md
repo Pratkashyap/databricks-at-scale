@@ -50,6 +50,7 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 - **Never name the employer or any of its brands or products**, in any file, commit message or image. Always write "a subscription streaming business". Before every push, scan the repo, the git history and `../LinkedIn/`.
 - **Confidentiality:** describe methods and patterns only. No figures, no market names, no internal table, tool or catalog names, no employer-specific details. Illustrative numbers are labelled as made up.
 - **Feature names:** Databricks renames and ships features quickly. Flag anything recent (metric views, Genie and similar) to be checked against the current docs.
+- **Answer what you asked.** Every Databricks feature named in a post or poster must solve a problem named in the same piece, paired one-to-one and in the same order in both. Listing capabilities that answer nothing reads as a brochure.
 - **The layman test.** Read the poster as someone who has never opened Databricks. If the biggest element is something they would skip, rebuild it.
 - **The canonical build strip**, on every poster, lighting this episode's stage: `Data · Definition · Features · Model · Evaluation · Serving · Monitoring`.
 - **Stay in your episode's lane.** `PROGRESS.md` holds the feature ownership map; each Databricks feature is explained in exactly one episode. Other episodes' features may appear dim in the stack strip, never explained.
