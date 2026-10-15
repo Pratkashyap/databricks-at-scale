@@ -1,7 +1,7 @@
 # Progress
 
 **Last updated:** 2026-09-11
-**Where we are:** Trailer is live on LinkedIn. **Episodes 01 and 02 are built and ready to post**, awaiting Prateek's review. The repo is **public**: https://github.com/Pratkashyap/databricks-at-scale
+**Where we are:** Trailer and Episode 01 are live on LinkedIn. **Episode 02 is ready to post.** Episode 03 is next to build. The repo is **public**: https://github.com/Pratkashyap/databricks-at-scale
 
 ---
 
@@ -30,6 +30,7 @@ In order:
 | 2026-09-11 | Episode 01 drafted: learning doc, post, poster and cert prep. Files reorganised. `PROGRESS.md` and the project skill created. Repo pushed to GitHub (private) |
 | 2026-09-11 | Brand-name scan of every file, the git history and GitHub: clean. `LinkedIn Posters/` renamed `LinkedIn/` and now holds post, poster and article per episode |
 | 2026-09-11 | Repo made **public**. Confirmed it opens without signing in |
+| 2026-10-15 | **Episode 01 published.** Its final structure recorded as the post template (design-log Ref 07) and applied to Episode 02, which is ready to post |
 | 2026-09-29 | House style captured from the published trailer and applied to all posts. Trailer recorded as published |
 | 2026-09-29 | **Episode 02 built**: learn, post, poster, cert prep. Three-band poster template confirmed. Canonical build strip fixed for the series. Files renamed to `epNN-*` |
 | 2026-09-29 | Episode 01 poster v3: picture-first, no code, Unity Catalog at the centre. Post simplified to plain language |
@@ -42,8 +43,8 @@ In order:
 | Ep | Title | Learn | Post | Poster | Cert | Posted |
 |---|---|---|---|---|---|---|
 | 00 | Trailer | — | ✅ | ✅ | — | ✅ 2026-09-11 |
-| 01 | Nobody agreed what churn meant | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
-| 02 | Where the data actually lives | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
+| 01 | Nobody agreed what churn meant | ✅ | ✅ | ✅ | ✅ | ✅ published |
+| 02 | Where the data actually lives | ✅ | ✅ | ✅ | ✅ | ⬜ posting today |
 | 03 | Features that don't lie | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 04 | Why the boring model won | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 05 | My metric was lying to me ⭐ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |

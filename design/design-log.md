@@ -126,6 +126,26 @@ Prateek edited our draft before publishing, and the edits were consistent enough
 
 ---
 
+### Ref 07 · Episode 01 as published — the post template, finalised
+📎 *Shared 2026-10-15. Recorded verbatim in `episodes/01-nobody-agreed-what-churn-meant/ep01-post.md`.*
+
+Prateek tightened our Episode 01 draft before publishing. These are now the rules, on top of Ref 06:
+
+| Rule | Detail |
+|---|---|
+| **Heading line** | `Databricks at Scale · Ep N · Title`, fully bold. Series first, `Ep N` abbreviated |
+| **No blank line after the heading** | The callback sentence follows immediately |
+| **Merge lead-ins** | `**Where Databricks came in:** The agreed definition doesn't…` — lead-in and first sentence share a line, rather than sitting on their own |
+| **Space before a colon** | `didn't mean the same thing :` and `**Voluntary** : they chose to cancel` |
+| **Closing lines run together** | `Next for me:` / `What it cost:` / the takeaway sit as three consecutive lines with no blank line between them |
+| **No repo-link line** | He dropped "Full write-up in the repo — link in the comments" |
+| **Sign-off** | `Next Episode N · **Title** drops next week.` then the tags |
+| **Tag block** | ~11 hashtags plus company and product tags: `Databricks Anthropic Microsoft Microsoft Copilot #Dubai #Singapore #TechinAsia #claude #claudecode #cursor Cursor` |
+
+Length to aim for: **2,100–2,600 characters**. Episode 02 came in at 2,405.
+
+---
+
 ## 2. What we built, and the verdicts
 
 ### Episode 02 poster · the three-band template, reused — ⏳ AWAITING VERDICT
