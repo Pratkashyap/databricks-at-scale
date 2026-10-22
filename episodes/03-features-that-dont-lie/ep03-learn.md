@@ -95,7 +95,7 @@ That last mile is a risk. If the scoring job later fills a gap differently, or e
 
 Two defences:
 
-- **One governed table** that both training and scoring read, rather than two notebooks each building their own.
+- **One governed table** that both training and scoring read, rather than two notebooks each building their own. It lives in Unity Catalog at the same grain as the label, so the two join cleanly, the access rules are the same as the rest of the data, and another team can discover and reuse it instead of rebuilding it.
 - **Shared code for the last mile.** The encoding and filling rules live in one importable place, not copy-pasted into two scripts.
 
 ### What I'd do differently, and am learning next
@@ -150,7 +150,7 @@ I hand-rolled all of that. It works, but the correctness depends on my SQL rathe
 
 ## Next episode
 
-The features are built, honest, and point-in-time correct. Now the part everyone expects to be the hard bit — choosing the model. I ran the bake-off, and then threw most of it away.
+The features are built, honest, and point-in-time correct. Here's the thing that follows from it: **good features are why a boring model was enough.** I ran the bake-off across four algorithms, per-market models and per-tenure models — then threw most of it away.
 
 **Episode 04 · Why the boring model won.**
 

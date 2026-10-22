@@ -63,7 +63,8 @@ print()
 pat = re.compile(r"\bhbo\b|hbo ?max|warner|\bwbd\b|\bjapac\b|discovery\+|cinemax", re.I)
 hits = 0
 for f in glob.glob("**/*.*", recursive=True):
-    if "/private/" in f.replace("\\", "/") or f.endswith((".png", ".jpg", ".svg")):
+    nf = f.replace("\\", "/")
+    if "/private/" in nf or nf.endswith(("check_repo.py", ".png", ".jpg", ".svg")):
         continue
     try:
         if pat.search(io.open(f, encoding="utf-8", errors="ignore").read()):

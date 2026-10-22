@@ -163,6 +163,19 @@ Length to aim for: **2,100–2,600 characters**. Episode 02 came in at 2,405.
 
 ---
 
+### Episode 03, second pass — three rules that now apply to every episode
+*2026-10-22.* Prateek asked whether the post should carry the feature categories, whether to front Feature Engineering in UC, and how to connect each episode to the next.
+
+**1. The post must carry the same blocks as the poster.** The poster had a "what went in" strip; the post only said what was *not* used. Readers want the specifics — genre variety, time to first play, weekend ratios — because those are copyable. Evidence beats a claim.
+
+**2. Never front a capability that wasn't used.** Feature Engineering in Unity Catalog stays as *next for me*. Promoting it to the headline invites the question "how did you set up point-in-time lookups?", which would have to be answered with "I haven't". Being explicit about the upgrade path is itself the senior signal.
+
+**3. End on the consequence, not the title.** "Episode 4 drops next week" is a label. *"Good features are why a boring model was enough"* connects the two episodes and makes an argument. Every episode now closes with the thing it enables.
+
+**Also noted honestly:** Episode 03's content is more ML craft than Databricks-specific, and forcing a platform angle produces the brochure tone already rejected. The heavy platform episodes are 04 (MLflow), 06 (Asset Bundles, alias promotion, drift) and 09 (system tables, cost tags). Let the light ones be light.
+
+---
+
 ## 2. What we built, and the verdicts
 
 ### Episode 02 poster · the three-band template, reused — ⏳ AWAITING VERDICT
