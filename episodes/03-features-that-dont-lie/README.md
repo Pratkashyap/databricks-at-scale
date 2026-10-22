@@ -13,6 +13,6 @@ The model didn't care who subscribers were — it cared what they did. This epis
 | [`ep03-poster.png`](ep03-poster.png) | The visual |
 | [`ep03-cert-prep.md`](ep03-cert-prep.md) | Short recall questions |
 
-**Databricks in this episode:** feature tables · gold layer · SQL window functions · point-in-time correctness · leakage · training/serving skew · Feature Engineering in Unity Catalog *(learning next)*
+**Databricks in this episode:** **Feature Engineering in Unity Catalog** · feature tables and keys · feature lookups · SQL window functions · point-in-time correctness · leakage · training/serving skew · online lookup *(next)*
 
 ← [Episode 02](../02-where-the-data-lives/) · [Episode 04](../04-why-the-boring-model-won/) →

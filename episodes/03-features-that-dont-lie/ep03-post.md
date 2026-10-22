@@ -1,7 +1,7 @@
 # Episode 03 · LinkedIn post
 
 > The four feature families, then each trap paired with its fix, then the bridge into Episode 04. The poster shows the same families and the same three pairs.
-> Copy the box, paste into LinkedIn, attach [`ep03-poster.png`](ep03-poster.png). **2,322 of 3,000 characters.** Full detail: [`ep03-learn.md`](ep03-learn.md).
+> Copy the box, paste into LinkedIn, attach [`ep03-poster.png`](ep03-poster.png). **2,649 of 3,000 characters.** Full detail: [`ep03-learn.md`](ep03-learn.md).
 
 ```
 𝗗𝗮𝘁𝗮𝗯𝗿𝗶𝗰𝗸𝘀 𝗮𝘁 𝗦𝗰𝗮𝗹𝗲 · 𝗘𝗽 𝟯 · 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀 𝘁𝗵𝗮𝘁 𝗱𝗼𝗻'𝘁 𝗹𝗶𝗲
@@ -34,13 +34,15 @@ No demographics. What people did predicted leaving far better than who they were
 → 𝗦𝗽𝗹𝗶𝘁 𝘁𝗵𝗲 𝘄𝗶𝗻𝗱𝗼𝘄 : early vs late sub-windows and a weekly slope. Late-window engagement turned out to be the strongest signal in the model.
 
 𝟮. Using something the model won't have yet. Brilliant in training, fails live.
-→ A 𝗽𝗼𝗶𝗻𝘁-𝗶𝗻-𝘁𝗶𝗺𝗲 𝗰𝘂𝘁-𝗼𝗳𝗳 : features only from before the cut-off, the label only after the renewal window closes.
+→ 𝗟𝗲𝘁 𝘁𝗵𝗲 𝗸𝗲𝘆 𝗰𝗮𝗿𝗿𝘆 𝘁𝗵𝗲 𝗰𝘂𝘁-𝗼𝗳𝗳 : the feature table is keyed on subscriber and billing cycle, so a lookup returns what was true for that cycle. Point-in-time correctness stops being something you have to remember.
 
 𝟯. Features built twice — once for training, once for scoring — quietly drift apart.
-→ 𝗢𝗻𝗲 𝗴𝗼𝗹𝗱 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝘁𝗮𝗯𝗹𝗲, governed in Unity Catalog at the same grain as the label, so training and scoring read the same thing — and other teams can find it.
+→ 𝗙𝗲𝗮𝘁𝘂𝗿𝗲 𝘁𝗮𝗯𝗹𝗲𝘀 𝗶𝗻 𝗨𝗻𝗶𝘁𝘆 𝗖𝗮𝘁𝗮𝗹𝗼𝗴 : one keyed, governed table that training and scoring both look up. One definition, not two notebooks — and other teams can find and reuse it.
 
 
-𝗡𝗲𝘅𝘁 𝗳𝗼𝗿 𝗺𝗲: Feature Engineering in Unity Catalog, so point-in-time lookups are the platform's job instead of mine.
+This is the part I'd most recommend to anyone starting now. A feature table is not just a table with features in it : the key, the governance and the lineage back to the model are what stop quiet drift.
+
+𝗡𝗲𝘅𝘁 𝗳𝗼𝗿 𝗺𝗲: online lookups, so the same features can serve a real-time decision and not only tonight's batch.
 
 𝗪𝗵𝗮𝘁 𝗶𝘁 𝗰𝗼𝘀𝘁: lower training scores. Honest ones.
 
@@ -51,12 +53,12 @@ Good features are why a boring model was enough.
 
 Next Episode 4 · 𝗪𝗵𝘆 𝘁𝗵𝗲 𝗯𝗼𝗿𝗶𝗻𝗴 𝗺𝗼𝗱𝗲𝗹 𝘄𝗼𝗻 drops next week.
 
-#Databricks #DataScience #MachineLearning #Analytics #Lakehouse #FeatureStore #dataengineering #mlops #churn #SingaporeAI #agenticAI Databricks Anthropic Microsoft Microsoft Copilot #Dubai #Singapore #TechinAsia #claude #claudecode #cursor Cursor
+#Databricks #DataScience #MachineLearning #Analytics #Lakehouse #FeatureStore #UnityCatalog #mlops #churn #SingaporeAI #agenticAI Databricks Anthropic Microsoft Microsoft Copilot #Dubai #Singapore #TechinAsia #claude #claudecode #cursor Cursor
 ```
 
 ## Before you post
 
+- [ ] **Check the detail before a commenter does:** the post says the feature table is keyed on subscriber and billing cycle. If you also declared a *timestamp key* and used `create_training_set()`, that is worth saying in the comments — it is the strongest Databricks-specific point in this episode
 - [ ] Truth check: every claim is something that actually happened
-- [ ] Feature Engineering in Unity Catalog is framed as **next**, never as something already used
 - [ ] Nothing names the employer, its brands, markets or figures
 - [ ] Reply to every comment in the first hour

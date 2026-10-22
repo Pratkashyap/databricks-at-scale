@@ -176,6 +176,17 @@ Length to aim for: **2,100–2,600 characters**. Episode 02 came in at 2,405.
 
 ---
 
+### Episode 03, third pass — a source-document error, caught by asking
+*2026-10-22.* After the second pass, Prateek said: *"honestly I made separate features on Unity Catalog and then it was used."* The discovery doc (Q18) said the opposite — hand-rolled tables, with Feature Engineering in UC as an upgrade path. That answer had been flagged 🟡 *partly inferred*, and it was wrong.
+
+**Why it mattered:** two posts' worth of framing rested on it. Episode 03 was written around "I hand-rolled this, the platform does it better" — which understated the work and removed the single most Databricks-specific thing in the episode.
+
+**What changed:** trap 2's answer became *the key carries the cut-off* (the feature table is keyed on subscriber and billing cycle), trap 3's became *feature tables in Unity Catalog*, and "next for me" moved from the Feature Store to **online lookup**. The private answers file was corrected in place, with the old answer struck through rather than deleted.
+
+**Rule added:** before building an episode, re-check every 🟡 *partially known* answer in the discovery doc with Prateek. Inferred answers are the ones that produce confident, wrong posts.
+
+---
+
 ## 2. What we built, and the verdicts
 
 ### Episode 02 poster · the three-band template, reused — ⏳ AWAITING VERDICT

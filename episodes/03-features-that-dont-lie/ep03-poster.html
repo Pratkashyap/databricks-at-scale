@@ -42,11 +42,11 @@
 
   /* problem -> answer */
   .pair{display:grid;grid-template-columns:1fr 44px 1.08fr;align-items:stretch;margin-bottom:15px}
-  .pb{background:rgba(255,54,33,.07);border:1.5px solid #5e2a22;border-radius:12px;padding:24px 20px;display:flex;flex-direction:column;justify-content:center}
+  .pb{background:rgba(255,54,33,.07);border:1.5px solid #5e2a22;border-radius:12px;padding:20px 20px;display:flex;flex-direction:column;justify-content:center}
   .pb .n{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:5px}
   .pb .t{font-size:19px;font-weight:700;line-height:1.32;color:#fff}
   .ar{display:flex;align-items:center;justify-content:center;color:var(--red);font-size:24px;font-weight:700}
-  .an{background:var(--card);border:1.5px solid var(--line);border-left:4px solid var(--good);border-radius:12px;padding:24px 20px}
+  .an{background:var(--card);border:1.5px solid var(--line);border-left:4px solid var(--good);border-radius:12px;padding:20px 20px}
   .an .tool{font-family:Consolas,"SF Mono",Menlo,monospace;font-size:18px;font-weight:700;color:#8fdba7}
   .an .t{font-size:16.5px;color:var(--ink2);line-height:1.38;margin-top:5px}
   .an .t b{color:#fff}
@@ -102,15 +102,15 @@
   <div class="pair">
     <div class="pb"><div class="n">Trap</div><div class="t">Using something the model won't have yet. It looks brilliant in training, then fails live.</div></div>
     <div class="ar">→</div>
-    <div class="an"><div class="tool">Point-in-time cut-off</div>
-      <div class="t">One row per billing cycle. Features only from before the cut-off, <b>the label only after the renewal window closes.</b></div></div>
+    <div class="an"><div class="tool">The key is the cut-off</div>
+      <div class="t">The feature table is keyed on subscriber and billing cycle, so a lookup returns <b>what was true for that cycle</b>. Point-in-time stops being something you remember.</div></div>
   </div>
 
   <div class="pair">
     <div class="pb"><div class="n">Trap</div><div class="t">Features built twice — once for training, once for scoring — quietly drift apart.</div></div>
     <div class="ar">→</div>
-    <div class="an"><div class="tool">One gold feature table</div>
-      <div class="t">One table, <b>governed in Unity Catalog at the label's grain</b> — training and scoring read the same thing. Next for me: Feature Engineering in UC.</div></div>
+    <div class="an"><div class="tool">Feature tables in Unity Catalog</div>
+      <div class="t">One keyed, governed table that <b>training and scoring both look up</b> — one definition instead of two notebooks, discoverable by other teams.</div></div>
   </div>
 
   <div class="rule">Most of the work wasn't picking a model. <b>It was deciding what the model is allowed to know, and when.</b></div>

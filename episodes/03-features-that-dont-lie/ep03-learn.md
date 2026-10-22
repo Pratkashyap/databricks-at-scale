@@ -87,6 +87,8 @@ Three rules that prevent it:
 
 This is **point-in-time correctness**: every row answers "what did we know at the moment we'd have had to decide?" Get it wrong and every number downstream — the metric in Episode 05, the business case in Episode 09 — is inflated.
 
+The thing that made this reliable rather than careful was **putting the period into the key**. The feature table is keyed on subscriber *and* billing cycle, so looking up features for a row returns what was true for that cycle. Correctness comes from the structure rather than from remembering to filter dates in every new query — which is the kind of discipline that survives other people joining the project.
+
 ## 6. Trap 3 — features built twice drift apart
 
 In this project the features are built in SQL and published as a **gold feature table**, then the training notebook does the last mile: one-hot encoding the categories, log-scaling the skewed counts, filling the gaps.
@@ -98,11 +100,22 @@ Two defences:
 - **One governed table** that both training and scoring read, rather than two notebooks each building their own. It lives in Unity Catalog at the same grain as the label, so the two join cleanly, the access rules are the same as the rest of the data, and another team can discover and reuse it instead of rebuilding it.
 - **Shared code for the last mile.** The encoding and filling rules live in one importable place, not copy-pasted into two scripts.
 
-### What I'd do differently, and am learning next
+### Feature tables in Unity Catalog
 
-Databricks has a product for exactly this: **Feature Engineering in Unity Catalog** (the Feature Store). A feature table there has a **primary key and a timestamp**, so the platform can do a *point-in-time lookup* — fetch each row's features as they were at that moment — and serve the same definitions at scoring time.
+This is where the platform does real work, and it's the part I'd most recommend to anyone starting now.
 
-I hand-rolled all of that. It works, but the correctness depends on my SQL rather than on the platform. Moving the assembled features into a UC feature table is the clearest upgrade in the whole project, and it's next on my list.
+A **feature table** in Unity Catalog isn't just a table that happens to contain features. It is registered as a feature table, which means:
+
+- It has a **declared primary key**. Here that key is subscriber plus billing cycle — the same grain as the label — so a lookup can only return the right row for the right period.
+- Training and scoring **look up the same table** rather than each rebuilding features. That removes the most common cause of skew at its source.
+- It carries the **governance and lineage** of everything else in Unity Catalog: the same access rules, and a visible link from the features to the model that used them.
+- Other teams can **discover and reuse it**. A feature someone else has already defined, tested and monitored is worth more than a better one you build privately.
+
+The lesson that transfers: a feature table is a *contract between training and scoring*, in the same way Episode 01's metric definition was a contract between teams. Both work for the same reason — the definition lives in one governed place instead of being re-derived by whoever needs it next.
+
+### What's next for me
+
+Today the lookups happen in batch: features are fetched when the nightly scoring job runs. The next step is **online lookup**, so the same features can answer a real-time question — a decision at the moment someone clicks cancel, rather than a score computed last night.
 
 ## 7. What it cost
 
@@ -111,7 +124,7 @@ I hand-rolled all of that. It works, but the correctness depends on my SQL rathe
 | Behaviour over demographics | A stronger model, no personal data to govern | Nothing to say about subscribers with almost no activity |
 | Splitting the window | The single strongest signal in the model | Many more columns to build and monitor |
 | Strict point-in-time cut-off | Numbers that survive contact with production | Lower training scores — honest ones |
-| Hand-rolled feature table | Full control, no new product to learn | Correctness rests on my code, and the last mile can drift |
+| Feature tables in Unity Catalog | One definition for training and scoring, with governance and lineage | A product to learn, and feature changes now need versioning discipline |
 
 ## 8. What you can copy
 
@@ -120,7 +133,7 @@ I hand-rolled all of that. It works, but the correctness depends on my SQL rathe
 - [ ] Check every feature against one question: *would I have had this value at prediction time?*
 - [ ] Keep the **last mile of transformation in one shared place**, not in two notebooks
 - [ ] Test behaviour features before enriching demographics — behaviour usually wins
-- [ ] If you're starting now, use a **feature store with a primary key and timestamp** rather than hand-rolling point-in-time logic
+- [ ] Register features as a **feature table with a declared key**, rather than a plain table you join by hand — the key is what makes correctness structural
 
 ## 9. Key terms
 
