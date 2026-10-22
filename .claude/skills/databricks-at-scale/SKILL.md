@@ -23,6 +23,7 @@ Audience: newcomers to Databricks and senior practitioners. Plain English, every
 | `episodes/NN-name/` | `epNN-learn.md`, `epNN-post.md`, `epNN-poster.html` + `.png`, `epNN-cert-prep.md`, `README.md`. **Always prefix files with `epNN-`** so a download is identifiable |
 | `design/design-log.md` | Every visual reference, version and verdict, plus the settled design rules. **Read before designing** |
 | `design/export_png.py` | Converts an HTML poster to a LinkedIn PNG |
+| `design/check_repo.py` | **Run before every push.** Checks poster overflow and empty bands, broken links, emoji and length in posts, employer/brand terms, and which episodes are complete |
 | `design/versions/` | Old and unused drafts, kept for history |
 | `design/brand/databricks-logo.svg` | The logo, used on every poster |
 | `docs/discovery.md` | The discovery questions |
@@ -42,7 +43,8 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 4. **`poster.html`**: **the three-band template** — (1) *the problem*: a source → three real failures → the consequence; (2) *the fix*: the Databricks answer as the middle band, drawn as boxes with arrows; (3) *the decision*: two cards. Then the build strip, the takeaway, the footer. **No code on posters** — code lives in `learn.md`. Aim for 150–200 words. Netflix style with a dark Databricks-navy gradient, the logo on the title line, 1080×1350 and minimal text. **Every poster must pass three checks:** (a) the *logo test* — cover the logo and something still identifies Databricks; (b) the series name appears on it; (c) at least one **concrete mechanism** — a real name, command or snippet — not just a claim like "governed". Carry the **"you are here" stack strip** (churn label → features → training → registry → scores → monitoring, with Unity Catalog and Asset Bundles beneath), lighting this episode's box and dimming the rest. Export with `python design/export_png.py episodes/NN-name/poster.html`, fix any overflow warning, then **look at the PNG**.
 5. **`cert-prep.md`**: a recall table, 2–3 applied questions and a spaced-repetition note.
 6. Copy into `../LinkedIn/NN-name/` as `READY - post.txt`, `READY - poster.png` and `READY - article.md` (a copy of learn.md). After Prateek posts, rename `READY -` to `POSTED -`.
-7. Update `PROGRESS.md` (status, log, next steps) and this skill's changelog. Commit and push.
+7. Run `python design/check_repo.py` and fix anything it reports.
+8. Update `PROGRESS.md` (status, log, next steps) and this skill's changelog. Commit and push.
 
 ## Non-negotiable rules
 
@@ -69,6 +71,7 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 - **2026-09-11**: Skill created. Trailer posted. Episode 01 drafted. Repo pushed to GitHub (private). Structure: `learn.md` is the detailed doc and `post.md` is the summary. PNG export moved to a Playwright script, because headless Edge was unreliable.
 - **2026-09-11**: Full brand-name scan (all files, git history, GitHub metadata): clean. "No employer or brand names" made an explicit rule. `LinkedIn Posters/` renamed to `LinkedIn/`, and each episode folder now holds post, poster and article.
 - **2026-09-11**: Repo made public at Prateek's request.
+- **2026-10-22**: Episode 03 built. Added `design/check_repo.py` after a spacing regression and four broken links slipped through; it now runs before every push.
 - **2026-09-29**: House style captured from the published trailer (Ref 06) and applied to Episodes 01 and 02; the trailer is now recorded verbatim as published.
 - **2026-09-29**: When editing files in place, encode the text before opening the file for writing. A failed write truncated `design-log.md` to zero bytes and it had to be restored from git.
 - **2026-09-29**: Episode 02 built. Three-band poster confirmed as the series template; canonical build strip fixed; posts now open and close with a heading; all episode files renamed `epNN-*`.

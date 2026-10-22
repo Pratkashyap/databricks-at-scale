@@ -64,7 +64,7 @@ Structure, top to bottom:
 ---
 
 ### Ref 01 · "Power BI storage modes over Fabric and Azure Databricks"
-📎 *On disk: [`design-refs/ref-01-powerbi-storage-modes.jpg`](design-refs/ref-01-powerbi-storage-modes.jpg). Shared 2026-09-07.*
+📎 *On disk: [`refs/ref-01-powerbi-storage-modes.jpg`](refs/ref-01-powerbi-storage-modes.jpg). Shared 2026-09-07.*
 
 Numbered, colour-banded horizontal lanes. Each row: a number badge, a left label, then a left-to-right icon flow. Soft pastel row fills, white background, clean sans.
 

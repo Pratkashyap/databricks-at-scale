@@ -15,7 +15,7 @@ CREATE SCHEMA IF NOT EXISTS databricks_at_scale;
 USE SCHEMA databricks_at_scale;
 ```
 
-This creates the schema in your workspace's default catalog. Unity Catalog's three-part naming (`catalog.schema.table`) is explained in [Episode 01](episodes/01-nobody-agreed-what-churn-meant/learn.md).
+This creates the schema in your workspace's default catalog. Unity Catalog's three-part naming (`catalog.schema.table`) is explained in [Episode 01](episodes/01-nobody-agreed-what-churn-meant/ep01-learn.md).
 
 ## 3. Read and run each episode
 

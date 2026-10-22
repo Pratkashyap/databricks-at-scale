@@ -4,7 +4,7 @@
 
 # Databricks at Scale
 
-**A 9-episode series on building an end-to-end churn prediction system on Databricks, scoring subscribers across eight markets every day, and on everything around the model that nobody warns you about.**
+**A 9-episode series on building an end-to-end churn prediction system on Databricks, scoring subscribers across Global markets every day, and on everything around the model that nobody warns you about.**
 
 Each episode takes one real moment from the build (a problem, a decision, sometimes a mistake) and explains the part of Databricks that solved it. **Plain English. No Databricks experience needed.**
 
@@ -18,9 +18,9 @@ Each episode takes one real moment from the build (a problem, a decision, someti
 |---|---|---|
 | 🎬 | [**Trailer**](episodes/00-trailer/) | ✅ Posted |
 | | **Season 1 · The Problem**: *What are we even measuring?* | |
-| 01 | [Nobody agreed what churn meant](episodes/01-nobody-agreed-what-churn-meant/) | 🔨 In progress |
-| 02 | Where the data actually lives | ⬜ |
-| 03 | Features that don't lie | ⬜ |
+| 01 | [Nobody agreed what churn meant](episodes/01-nobody-agreed-what-churn-meant/) | ✅ Posted |
+| 02 | [Where the data actually lives](episodes/02-where-the-data-lives/) | ✅ Posted |
+| 03 | [Features that don't lie](episodes/03-features-that-dont-lie/) | 🔨 Ready |
 | | **Season 2 · The Build**: *From notebook to system* | |
 | 04 | Why the boring model won | ⬜ |
 | 05 | My metric was lying to me ⭐ *the turn* | ⬜ |
@@ -34,10 +34,10 @@ Each episode takes one real moment from the build (a problem, a decision, someti
 
 ## What each episode gives you
 
-- **`learn.md`**: the full breakdown, with every term defined and example SQL
-- **`post.md`**: the LinkedIn summary
-- **`poster.png`**: the visual
-- **`cert-prep.md`**: short recall questions
+- **`epNN-learn.md`**: the full breakdown, with every term defined and example SQL
+- **`epNN-post.md`**: the LinkedIn summary
+- **`epNN-poster.png`**: the visual
+- **`epNN-cert-prep.md`**: short recall questions
 
 ## What you'll pick up
 
@@ -49,7 +49,7 @@ Lakehouse · Delta Lake · Unity Catalog · Genie · compute & DBUs · feature e
 
 ```
 episodes/     the series: one folder per episode
-design/       posters, the Databricks logo, the design log, the PNG exporter
+design/       posters, the Databricks logo, the design log, the PNG exporter, the repo checker
 docs/         discovery questions
 PROGRESS.md   status and next steps
 PROJECT.md    the whole project on one page

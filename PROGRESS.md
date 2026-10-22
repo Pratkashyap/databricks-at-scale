@@ -9,7 +9,7 @@
 
 In order:
 
-1. **Review Episode 01**: [`learn.md`](episodes/01-nobody-agreed-what-churn-meant/learn.md), [`post.md`](episodes/01-nobody-agreed-what-churn-meant/post.md) and [`poster.png`](episodes/01-nobody-agreed-what-churn-meant/poster.png). Mark anything that didn't happen the way it's described.
+1. **Review Episode 01**: [`ep01-learn.md`(episodes/01-nobody-agreed-what-churn-meant/ep01-learn.md), [`post.md`](episodes/01-nobody-agreed-what-churn-meant/ep01-post.md) and [`poster.png`](episodes/01-nobody-agreed-what-churn-meant/ep01-poster.png). Mark anything that didn't happen the way it's described.
 2. **Truth check before posting.** Confirm the markets really did define churn differently (renewal window, reconnects, payment failures), and whether payment-failure cycles were dropped or kept as "not churned".
 3. ✅ **Repo made public** on 2026-09-11. Episode 01's "link in the comments" can point to it.
 4. **Post Episode 01**, then Episode 02 a week later. Everything is in `../LinkedIn/NN-.../` (post, poster, article).
@@ -30,6 +30,7 @@ In order:
 | 2026-09-11 | Episode 01 drafted: learning doc, post, poster and cert prep. Files reorganised. `PROGRESS.md` and the project skill created. Repo pushed to GitHub (private) |
 | 2026-09-11 | Brand-name scan of every file, the git history and GitHub: clean. `LinkedIn Posters/` renamed `LinkedIn/` and now holds post, poster and article per episode |
 | 2026-09-11 | Repo made **public**. Confirmed it opens without signing in |
+| 2026-10-22 | **Episode 03 built** (features: the window split, point-in-time cut-off, one feature table). Episode 02 published. Root README repaired — stale file names, "eight markets", and out-of-date statuses |
 | 2026-10-15 | **Episode 01 published.** Its final structure recorded as the post template (design-log Ref 07) and applied to Episode 02, which is ready to post |
 | 2026-09-29 | House style captured from the published trailer and applied to all posts. Trailer recorded as published |
 | 2026-09-29 | **Episode 02 built**: learn, post, poster, cert prep. Three-band poster template confirmed. Canonical build strip fixed for the series. Files renamed to `epNN-*` |
@@ -44,8 +45,8 @@ In order:
 |---|---|---|---|---|---|---|
 | 00 | Trailer | — | ✅ | ✅ | — | ✅ 2026-09-11 |
 | 01 | Nobody agreed what churn meant | ✅ | ✅ | ✅ | ✅ | ✅ published |
-| 02 | Where the data actually lives | ✅ | ✅ | ✅ | ✅ | ⬜ posting today |
-| 03 | Features that don't lie | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 02 | Where the data actually lives | ✅ | ✅ | ✅ | ✅ | ✅ published |
+| 03 | Features that don't lie | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
 | 04 | Why the boring model won | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 05 | My metric was lying to me ⭐ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 06 | A model that runs itself | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
@@ -74,7 +75,7 @@ Each feature belongs to **one** episode, so nothing is spent twice. Features fro
 |---|---|
 | 01 | Unity Catalog · `catalog.schema.table` · governed gold table · `COMMENT ON TABLE` · metric views + Genie *(not used yet → learning next)* |
 | 02 | Delta · medallion and upstream gold · compute: job clusters, Databricks Connect, SQL warehouse, cluster policy, LTS runtime, spot vs on-demand, Photon · `TRY_CAST` and schema drift · Workflows freshness gate |
-| 03 | Feature table design · point-in-time correctness · training/serving skew · Feature Store *(not used → next)* |
+| 03 | Feature table design · SQL window functions · the window split · point-in-time correctness and leakage · training/serving skew · Feature Engineering in Unity Catalog *(not used → learning next)* |
 | 04 | MLflow experiments and tracking · model selection · class imbalance |
 | 05 | Evaluation: PR AUC vs lift over base rate · value→action thresholds |
 | 06 | Asset Bundles (one bundle, four targets) · Workflows orchestration · UC model registry with `@champion`/`@candidate` and a statistical promotion gate · predictions table · KS/PSI drift and the retrain trigger · Lakehouse Monitoring and serving endpoints *(not used → next)* |
