@@ -20,10 +20,10 @@ Each episode takes one real moment from the build (a problem, a decision, someti
 | | **Season 1 · The Problem**: *What are we even measuring?* | |
 | 01 | [Nobody agreed what churn meant](episodes/01-nobody-agreed-what-churn-meant/) | ✅ Posted |
 | 02 | [Where the data actually lives](episodes/02-where-the-data-lives/) | ✅ Posted |
-| 03 | [Features that don't lie](episodes/03-features-that-dont-lie/) | 🔨 Ready |
+| 03 | [Features that don't lie](episodes/03-features-that-dont-lie/) | ✅ Posted |
 | | **Season 2 · The Build**: *From notebook to system* | |
-| 04 | Why the boring model won | ⬜ |
-| 05 | My metric was lying to me ⭐ *the turn* | ⬜ |
+| 04 | [Why the boring model won](episodes/04-why-the-boring-model-won/) | 🔨 Ready |
+| 05 | [My metric was lying to me](episodes/05-my-metric-was-lying/) ⭐ *the turn* | 🔨 Ready |
 | 06 | A model that runs itself | ⬜ |
 | | **Season 3 · The Scale**: *One market becomes many* | |
 | 07 | Making it explain itself | ⬜ |

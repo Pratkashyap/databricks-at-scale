@@ -30,6 +30,7 @@ In order:
 | 2026-09-11 | Episode 01 drafted: learning doc, post, poster and cert prep. Files reorganised. `PROGRESS.md` and the project skill created. Repo pushed to GitHub (private) |
 | 2026-09-11 | Brand-name scan of every file, the git history and GitHub: clean. `LinkedIn Posters/` renamed `LinkedIn/` and now holds post, poster and article per episode |
 | 2026-09-11 | Repo made **public**. Confirmed it opens without signing in |
+| 2026-11-19 | **Episode 03 published** and recorded as published (house style Ref 08). **Episodes 04 and 05 built** — Season 2 opens. Ownership map adjusted: Episode 05 owns the predictions table for evaluation; Episode 04 states the pooled-model decision, Episode 08 explains why |
 | 2026-10-22 | **Correction:** Prateek confirmed he *did* use Feature Engineering in Unity Catalog. The discovery doc said otherwise (Q18, flagged as partly inferred). Episode 03 rebuilt around feature tables; source doc corrected |
 | 2026-10-22 | **Episode 03 built** (features: the window split, point-in-time cut-off, one feature table). Episode 02 published. Root README repaired — stale file names, "eight markets", and out-of-date statuses |
 | 2026-10-15 | **Episode 01 published.** Its final structure recorded as the post template (design-log Ref 07) and applied to Episode 02, which is ready to post |
@@ -47,9 +48,9 @@ In order:
 | 00 | Trailer | — | ✅ | ✅ | — | ✅ 2026-09-11 |
 | 01 | Nobody agreed what churn meant | ✅ | ✅ | ✅ | ✅ | ✅ published |
 | 02 | Where the data actually lives | ✅ | ✅ | ✅ | ✅ | ✅ published |
-| 03 | Features that don't lie | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
-| 04 | Why the boring model won | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 05 | My metric was lying to me ⭐ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 03 | Features that don't lie | ✅ | ✅ | ✅ | ✅ | ✅ published |
+| 04 | Why the boring model won | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
+| 05 | My metric was lying to me ⭐ | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
 | 06 | A model that runs itself | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 07 | Making it explain itself | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 08 | What breaks when you go global ⭐ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
@@ -77,8 +78,8 @@ Each feature belongs to **one** episode, so nothing is spent twice. Features fro
 | 01 | Unity Catalog · `catalog.schema.table` · governed gold table · `COMMENT ON TABLE` · metric views + Genie *(not used yet → learning next)* |
 | 02 | Delta · medallion and upstream gold · compute: job clusters, Databricks Connect, SQL warehouse, cluster policy, LTS runtime, spot vs on-demand, Photon · `TRY_CAST` and schema drift · Workflows freshness gate |
 | 03 | **Feature Engineering in Unity Catalog** (used) · feature tables, keys and lookups · SQL window functions · the window split · point-in-time correctness and leakage · training/serving skew · online lookup *(not used → next)* |
-| 04 | MLflow experiments and tracking · model selection · class imbalance |
-| 05 | Evaluation: PR AUC vs lift over base rate · value→action thresholds |
+| 04 | MLflow experiments and tracking (runs, parameters, metrics, artifacts) · model selection · class imbalance and `scale_pos_weight` · locked hyperparameters · the pooled-model *decision* (its reasoning is Ep 08's) · AutoML *(not used → next)* |
+| 05 | Evaluation: PR AUC vs lift over base rate · value→action thresholds · **the predictions table in Delta, for grading late-arriving labels** · MLflow evaluation *(not used → next)* |
 | 06 | Asset Bundles (one bundle, four targets) · Workflows orchestration · UC model registry with `@champion`/`@candidate` and a statistical promotion gate · predictions table · KS/PSI drift and the retrain trigger · Lakehouse Monitoring and serving endpoints *(not used → next)* |
 | 07 | `ai_query` · Foundation Model APIs · output guardrails · Vector Search and RAG *(not used → next)* |
 | 08 | Data residency · per-region catalogs · Delta Sharing · Clean Rooms · pooled vs per-market models |

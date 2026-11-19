@@ -187,6 +187,21 @@ Length to aim for: **2,100–2,600 characters**. Episode 02 came in at 2,405.
 
 ---
 
+### Ref 08 · Episode 03 as published — the post template, tightened again
+📎 *Shared 2026-11-19. Recorded verbatim in `episodes/03-features-that-dont-lie/ep03-post.md`.*
+
+| Rule | Detail |
+|---|---|
+| **Hook first, no recap** | The "Episode 2 made the data safe to read" opener was cut. The post starts on the two-subscribers example straight after the heading |
+| **Problem and fix on one line** | `**1.** A total hides the trend→ **Split the window** : …` — joined by `→`, not split across two lines |
+| **No closing takeaway, no bridge** | The bold takeaway and "good features are why a boring model was enough" were both removed. Close on `Next for me` / `What it cost` / the next-episode pointer |
+| **US spelling** | "behavior", not "behaviour" — in posts |
+| **Tag tail** | `Databricks Anthropic Microsoft Copilot #Dubai #Singapore #TechinAsia #claude #claudecode #cursor Cursor` |
+
+Applied from Episode 04 onwards. The rule box from each poster becomes one plain line after the third pair, in place of the dropped takeaway.
+
+---
+
 ## 2. What we built, and the verdicts
 
 ### Episode 02 poster · the three-band template, reused — ⏳ AWAITING VERDICT
