@@ -71,6 +71,7 @@ Trailer 00 (posted 2026-09-11) · **S1 The Problem:** 01 Nobody agreed what chur
 - **2026-09-11**: Skill created. Trailer posted. Episode 01 drafted. Repo pushed to GitHub (private). Structure: `learn.md` is the detailed doc and `post.md` is the summary. PNG export moved to a Playwright script, because headless Edge was unreliable.
 - **2026-09-11**: Full brand-name scan (all files, git history, GitHub metadata): clean. "No employer or brand names" made an explicit rule. `LinkedIn Posters/` renamed to `LinkedIn/`, and each episode folder now holds post, poster and article.
 - **2026-09-11**: Repo made public at Prateek's request.
+- **2026-11-24**: Episode 04 recorded as published. Episode 06 built (Season 2 finale) to Ref 09: an everyday picture (thermostat), the pairs as questions, ~1,400 characters before tags.
 - **2026-11-24**: Episode 05 published and recorded (Ref 09): no jargon the reader must already know, one everyday picture per idea, pairs written as questions, one line each, about 1,000 characters. Write the short version first.
 - **2026-11-19**: Episode 03 published and recorded (Ref 08). Episodes 04 and 05 built — Season 2 posters use the amber season colour. Ownership: Ep 05 owns the predictions table; Ep 04 states the pooled-model decision and plants Ep 08.
 - **2026-10-22**: Correction — Feature Engineering in UC *was* used; Episode 03 rebuilt around feature tables and the discovery doc fixed. Confirm 🟡 answers before building.

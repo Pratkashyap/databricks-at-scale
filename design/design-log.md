@@ -220,6 +220,13 @@ Applied from Episode 06 onwards: write the short version first, then add one rel
 
 ## 2. What we built, and the verdicts
 
+### Episode 06 poster · the loop band, Season 2 finale — ⏳ AWAITING VERDICT
+Built 2026-11-24 on the Episode 05 template, written to Ref 09.
+- **Top band:** a four-step loop (Score every day → Check every month → Retrain only on drift → Promote only if better), standing in for Episode 05's two-numbers cards. The everyday picture is a thermostat.
+- **Pairs as questions:** the red boxes carry the three questions from the post, word for word; the green boxes carry the Databricks answer (Asset Bundles · `@candidate → @champion` · Drift checks · KS · PSI).
+- **Strip:** Serving and Monitoring both lit — the first episode to light two stages.
+- **Badge:** "Season finale" in the slot Episode 05 used for "The turn".
+
 ### Episode 02 poster · the three-band template, reused — ⏳ AWAITING VERDICT
 *2026-09-29.* `episodes/02-where-the-data-lives/ep02-poster.html`.
 

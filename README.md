@@ -22,9 +22,9 @@ Each episode takes one real moment from the build (a problem, a decision, someti
 | 02 | [Where the data actually lives](episodes/02-where-the-data-lives/) | ✅ Posted |
 | 03 | [Features that don't lie](episodes/03-features-that-dont-lie/) | ✅ Posted |
 | | **Season 2 · The Build**: *From notebook to system* | |
-| 04 | [Why the boring model won](episodes/04-why-the-boring-model-won/) | 🔨 Ready |
+| 04 | [Why the boring model won](episodes/04-why-the-boring-model-won/) | ✅ Posted |
 | 05 | [My metric was lying to me](episodes/05-my-metric-was-lying/) ⭐ *the turn* | ✅ Posted |
-| 06 | A model that runs itself | ⬜ |
+| 06 | [A model that runs itself](episodes/06-runs-itself/) *season finale* | 🔨 Ready |
 | | **Season 3 · The Scale**: *One market becomes many* | |
 | 07 | Making it explain itself | ⬜ |
 | 08 | What breaks when you go global ⭐ *the climax* | ⬜ |

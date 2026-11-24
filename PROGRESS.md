@@ -1,7 +1,7 @@
 # Progress
 
 **Last updated:** 2026-11-24
-**Where we are:** Trailer and Episodes 01, 02, 03 and 05 are live on LinkedIn. Episode 04's published text is still to be recorded. **Episode 06 is next to build.** The repo is **public**: https://github.com/Pratkashyap/databricks-at-scale
+**Where we are:** Trailer and Episodes 01–05 are live on LinkedIn, all recorded as published. **Episode 06 is ready to post** (Season 2 finale). Episode 07 opens Season 3. The repo is **public**: https://github.com/Pratkashyap/databricks-at-scale
 
 ---
 
@@ -30,6 +30,7 @@ In order:
 | 2026-09-11 | Episode 01 drafted: learning doc, post, poster and cert prep. Files reorganised. `PROGRESS.md` and the project skill created. Repo pushed to GitHub (private) |
 | 2026-09-11 | Brand-name scan of every file, the git history and GitHub: clean. `LinkedIn Posters/` renamed `LinkedIn/` and now holds post, poster and article per episode |
 | 2026-09-11 | Repo made **public**. Confirmed it opens without signing in |
+| 2026-11-24 | **Episode 04 recorded as published** (counting hook, "pooled across APAC markets"). **Episode 06 built** in the Ref 09 style: thermostat picture, three questions — Asset Bundles · `@candidate` → `@champion` gate · drift-triggered retrain. Poster adds a four-step loop band and lights Serving + Monitoring |
 | 2026-11-24 | **Episode 05 published** and recorded as published. Post rewritten simple: no jargon, one everyday picture, three questions as the pairs (design-log Ref 09) |
 | 2026-11-19 | **Episode 03 published** and recorded as published (house style Ref 08). **Episodes 04 and 05 built** — Season 2 opens. Ownership map adjusted: Episode 05 owns the predictions table for evaluation; Episode 04 states the pooled-model decision, Episode 08 explains why |
 | 2026-10-22 | **Correction:** Prateek confirmed he *did* use Feature Engineering in Unity Catalog. The discovery doc said otherwise (Q18, flagged as partly inferred). Episode 03 rebuilt around feature tables; source doc corrected |
@@ -50,9 +51,9 @@ In order:
 | 01 | Nobody agreed what churn meant | ✅ | ✅ | ✅ | ✅ | ✅ published |
 | 02 | Where the data actually lives | ✅ | ✅ | ✅ | ✅ | ✅ published |
 | 03 | Features that don't lie | ✅ | ✅ | ✅ | ✅ | ✅ published |
-| 04 | Why the boring model won | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
+| 04 | Why the boring model won | ✅ | ✅ | ✅ | ✅ | ✅ published |
 | 05 | My metric was lying to me ⭐ | ✅ | ✅ | ✅ | ✅ | ✅ 2026-11-24 |
-| 06 | A model that runs itself | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 06 | A model that runs itself | ✅ | ✅ | ✅ | ✅ | ⬜ ready |
 | 07 | Making it explain itself | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 08 | What breaks when you go global ⭐ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 09 | What it cost, and what you can copy | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
