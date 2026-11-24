@@ -23,7 +23,7 @@ Each episode takes one real moment from the build (a problem, a decision, someti
 | 03 | [Features that don't lie](episodes/03-features-that-dont-lie/) | ✅ Posted |
 | | **Season 2 · The Build**: *From notebook to system* | |
 | 04 | [Why the boring model won](episodes/04-why-the-boring-model-won/) | 🔨 Ready |
-| 05 | [My metric was lying to me](episodes/05-my-metric-was-lying/) ⭐ *the turn* | 🔨 Ready |
+| 05 | [My metric was lying to me](episodes/05-my-metric-was-lying/) ⭐ *the turn* | ✅ Posted |
 | 06 | A model that runs itself | ⬜ |
 | | **Season 3 · The Scale**: *One market becomes many* | |
 | 07 | Making it explain itself | ⬜ |

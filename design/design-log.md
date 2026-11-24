@@ -202,6 +202,22 @@ Applied from Episode 04 onwards. The rule box from each poster becomes one plain
 
 ---
 
+### Ref 09 · Episode 05 as published — simple beats complete
+📎 *Shared 2026-11-24. Recorded verbatim in `episodes/05-my-metric-was-lying/ep05-post.md`.*
+
+| Rule | Detail |
+|---|---|
+| **No jargon the reader must already know** | The draft leaned on "PR AUC" and "base rate". Prateek's verdict: "very confusing". The published post names neither |
+| **One everyday picture per idea** | "Predict rain every day in Singapore and you'll be right most days. That doesn't make you a good forecaster." carries the whole metric lesson |
+| **Pairs as questions the reader can reuse** | `Better than guessing? → Lift`, `Good enough for what? → A cut-off per action`, `Was it right? → Every score kept in Delta`. Strategic: a leader can ask these of any model |
+| **One line per pair** | No second sentence of explanation. The detail lives in `learn.md` |
+| **Length** | About 1,000 characters before tags. A 2,061-character draft was "too big"; the 1,120-character cut was "too short", but the short one is what went out, plus `Next for me` |
+| **Hooks** | He asked for more clickbait openers but kept the plain, true one ("The score went up. The model hadn't improved.") |
+
+Applied from Episode 06 onwards: write the short version first, then add one relatable line only where an idea won't land without it.
+
+---
+
 ## 2. What we built, and the verdicts
 
 ### Episode 02 poster · the three-band template, reused — ⏳ AWAITING VERDICT
